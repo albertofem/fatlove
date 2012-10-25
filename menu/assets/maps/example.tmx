@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Tiles" tilewidth="32" tileheight="32">
+  <image source="C:/Users/Alberto/Desktop/exampleLove/tiles.png" width="96" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="solid" value="false"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="solid" value="false"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="4" name="Objects" tilewidth="32" tileheight="32">
+  <image source="C:/Users/Alberto/Desktop/exampleLove/mapobjects.png" width="64" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="_the" value="hero"/>
+    <property name="name" value="Hero"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="name" value="Chest"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="map" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt2rEagCAIBGCt93/nVgc/DVA49IabovIPdKqWUiqTJk+T6LXQQUdE3kFax6guMq3j6aTn6NVJaySZPe8mx473ro5XPzTzfqIDZX+gOjTrsDoQzl3UfmR0zNb4956M59UpDsS5yuhYdQa292kMmkgdiKEDK7c5Vpw3CPtc2p+eQ/p96aBjx76l4765klpRHaf0w8MhrfdyWOYyyuEdr37QQYfWY61B3OezGuv1TA5p6KCDDjqyJPp/kJX5AEViFYY=
+  </data>
+ </layer>
+ <objectgroup name="objects" width="50" height="50">
+  <object name="Dragon" x="1344" y="1184" width="64" height="64">
+   <properties>
+    <property name="_the" value="dragon"/>
+   </properties>
+  </object>
+  <object gid="4" x="288" y="128">
+   <properties>
+    <property name="_the" value="player"/>
+   </properties>
+  </object>
+  <object gid="5" x="512" y="320">
+   <properties>
+    <property name="hasSword" value="true"/>
+   </properties>
+  </object>
+  <object gid="5" x="512" y="576"/>
+  <object gid="5" x="128" y="416"/>
+  <object gid="5" x="1408" y="320"/>
+  <object gid="5" x="1408" y="576"/>
+  <object gid="5" x="480" y="960"/>
+  <object gid="5" x="416" y="1472"/>
+  <object gid="5" x="480" y="1472"/>
+  <object gid="5" x="544" y="1472"/>
+  <object gid="5" x="768" y="1472"/>
+  <object gid="5" x="1024" y="1472"/>
+  <object gid="5" x="928" y="928"/>
+  <object gid="5" x="1024" y="928"/>
+  <object gid="5" x="1024" y="1056"/>
+  <object gid="5" x="928" y="1056"/>
+  <object gid="5" x="473" y="296"/>
+  <object gid="5" x="570" y="301"/>
+  <object gid="5" x="579" y="340"/>
+  <object gid="5" x="510" y="376"/>
+  <object gid="5" x="456" y="375"/>
+  <object gid="5" x="421" y="363"/>
+  <object gid="5" x="387" y="322"/>
+  <object gid="5" x="391" y="299"/>
+  <object gid="5" x="413" y="271"/>
+  <object gid="5" x="469" y="260"/>
+  <object gid="5" x="491" y="260"/>
+ </objectgroup>
+</map>
