@@ -21,21 +21,24 @@ StartButton = Button:extend
         end,
         
         onMouseUp = function(self)
+                Menu.titleMusic:stop()
                 the.app.view = Level1:new()
         end
 }
 
 Menu = View:extend
 {
+        titleMusic = love.audio.newSource('menu/assets/music/title.mp3'),
+
         onNew = function(self)
-                src1 = love.audio.newSource('menu/assets/music/title.mp3')
-                
-                src1:setVolume(0.3)
-                
-                src1:play()
-                
+                self:loadAssets()
         
                 self.buttonStart = StartButton:new()
                 self:add(self.buttonStart)
+        end,
+        
+        loadAssets = function(self)
+                self.titleMusic:setVolume(0.3)
+                self.titleMusic:play()    
         end
 }
