@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="8" tileheight="8">
+ <tileset firstgid="1" name="ui" tilewidth="8" tileheight="8">
+  <image source="../../graphics/ui/ui.jpg" trans="ffffff" width="576" height="180"/>
+ </tileset>
+ <layer name="Capa de Patrones 1" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztz8cNAlEMANHdHsixMXJshBwbI8d2mAo+e1oJMU+ai+2Lo0iSftOEpjSjOS1oSStaB+Yb2qaw39E+wR8HOtKJznShK93oHpg/6JnC/kXvBH9k4ijKUo7yVKAilagcmFeomsK+RvX4+x8NbprUojZ1qEs96gfmAxqmsB/ROMEfkiRJkiRJkiRJkiT9ow8+Bk1Z
+  </data>
+ </layer>
+ <objectgroup name="Capa de Objetos 1" width="50" height="50">
+  <object name="title" x="34" y="47" width="334" height="33"/>
+ </objectgroup>
+</map>

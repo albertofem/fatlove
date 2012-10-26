@@ -1,7 +1,5 @@
 -- Punto de entrada de la View del Menu
 
-BASE_PATH = lfs.currentdir()
-
 require 'menu/buttons'
 
 Menu = View:extend

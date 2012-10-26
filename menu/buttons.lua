@@ -21,7 +21,6 @@ StartButton = Button:extend
         end,
         
         onMouseUp = function(self)
-                Menu.titleMusic:stop()
-                the.app.view = Level1:new()
+                Dialog:activate()
         end
 }

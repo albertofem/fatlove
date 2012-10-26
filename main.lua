@@ -4,7 +4,7 @@ DEBUG = true
 require 'zoetrope'
 require 'loading'
 require 'menu'
-require 'level1'
+require 'global'
 
 the.app = App:new
 {
