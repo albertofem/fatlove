@@ -13,7 +13,11 @@ StartButton = Button:extend
                 width = 223,
                 height = 37,
                 
-                image = 'menu/assets/graphics/button.png'
+                image = 'menu/assets/graphics/button.png',
+                
+                onNew = function(self)
+                        self:setEffect('menu/assets/shaders/button.glsl')
+                end
         },
         
         onMouseEnter = function(self)
