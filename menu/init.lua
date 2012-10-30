@@ -11,10 +11,11 @@ Menu = View:extend
         
                 self.buttonStart = StartButton:new()
                 self:add(self.buttonStart)
+                self:add(Player:new())
         end,
         
         loadAssets = function(self)
                 self.titleMusic:setVolume(0.3)
-                self.titleMusic:play()    
+                self.titleMusic:play()
         end
 }

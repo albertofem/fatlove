@@ -2,33 +2,38 @@ STRICT = true
 DEBUG = true
 
 require 'zoetrope'
-require 'loading'
-require 'menu'
 require 'global'
+require 'menu'
+require 'global/player'
 
 the.app = App:new
 {
+        view = Menu:new(),
+    
         name = "GameJamUA", -- Cambiar cuando sepamos nombre
         
         onNew = function(self)
                 if arg[#arg] == "-debug" then require("mobdebug").start() end
-                
-                cursor = love.graphics.newImage("global/assets/graphics/cursor.png")
-                love.mouse.setVisible(false)
-                love.mouse.setGrab(true)
         end,
         
         onRun = function (self)
+                self.cursor = Cursor:new()
                 self.view = Menu:new()
         end,
         
-        onDraw = function(self)
-                love.graphics.draw(cursor, love.mouse.getX() - cursor:getWidth() / 2, love.mouse.getY() - cursor:getHeight() / 2)
+        onUpdate = function(self)
+                self.cursor:onUpdate()
+            
+                if the.keys:justPressed('escape') == true then
+                        if(self.view:instanceOf(Subview)) then
+                            self.view:deactivate()
+                        else
+                            love.event.push('quit')
+                        end
+                end
         end,
         
-        onUpdate = function(self)
-                if the.keys:pressed('escape') == true then
-                        love.event.push('quit')
-                end
-        end        
+        onDraw = function(self)
+            self.cursor:draw()
+        end
 }

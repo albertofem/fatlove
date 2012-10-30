@@ -13,33 +13,60 @@ DialogBackground = Tile:extend
         end
 }
 
+-- TODO: Subview draws multiple time the same tile
 Dialog = Subview:extend
 {
-        onActivate = function(self)
-                self.dialog = DialogBackground:new()
-                self:add(self.dialog)
+    onActivate = function(self)
+            if not self.dialog then self.dialog = DialogBackground:new() end
+            self:add(self.dialog)
+    end,
+    
+    onDeactivate = function(self)
+        self:remove(self.dialog)
+    end,
+    
+    onUpdate = function(self)
+        if(the.mouse:justPressed("r")) then
+            self:deactivate()
         end
+    end
 }
 
-JumpingActor = {
+Cursor = Tile:new
+{
+    image = 'global/assets/graphics/cursor.png',
+    
+    onNew = function(self)
+        love.mouse.setVisible(false)
+        love.mouse.setGrab(false)
+    end,
+    
+    onUpdate = function(self)
+       self.x = love.mouse.getX() - self.width / 2
+       self.y = love.mouse.getY() - self.height / 2
+    end
+}
+
+JumpingActor = Class:new
+{
         triggerKey = "up",
         
         jumping = false,
         
-        gravity = 350,
+        gravity = { x = 300, y = 300 },
         
         height = 150,
         
         length = 150,
 
         onUpdate = function(self, actor)
-                if(jumping == false) then
+                if(self.jumping == false) then
                         self.x = actor.x
                         self.y = actor.y
                 end
                 
-                if(the.keys:pressed(triggerKey) and jumping == false) then
-                        jumping = true
+                if(the.keys:justPressed(self.triggerKey) and self.jumping == false) then
+                        self.jumping = true
                         
                         actor.x = self:calculateJumpX()
                         actor.y = self:calculateJumpY()
@@ -60,14 +87,31 @@ JumpingActor = {
         end,
         
         calculateJumpY = function(self)
-                self.y = acceleration+self.y
+                self.y = self.acceleration+self.y
                 
                 return self.y
         end
 }
 
-MovingActor = {
-
+MovingActor = Class:new
+{
+    onUpdate = function(self, actor)
+        if(the.keys:pressed("right")) then
+            actor.x = actor.x+5;
+        end
+        
+        if(the.keys:pressed("left")) then
+            actor.x = actor.x-5;
+        end
+            
+        if(the.keys:pressed("up")) then
+            actor.y = actor.y-5
+        end
+            
+        if(the.keys:pressed("down")) then
+            actor.y = actor.y+5;
+        end
+    end
 }
 
 ShotingActor = {
