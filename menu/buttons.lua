@@ -5,6 +5,10 @@ StartButton = Button:extend
         x = 300,
         y = 300,
         
+        width = 200,
+        
+        height = 300,
+        
         background = Tile:extend
         {
                 x = 0,
@@ -26,5 +30,9 @@ StartButton = Button:extend
         
         onMouseUp = function(self)
                 Dialog:activate()
+        end,
+        
+        onCollide = function(self, other)
+           self:displace(other) 
         end
 }

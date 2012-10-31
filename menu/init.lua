@@ -11,11 +11,17 @@ Menu = View:extend
         
                 self.buttonStart = StartButton:new()
                 self:add(self.buttonStart)
-                self:add(Player:new())
+                
+                self.player = Player:new()
+                self:add(self.player)
         end,
         
         loadAssets = function(self)
                 self.titleMusic:setVolume(0.3)
                 self.titleMusic:play()
+        end,
+        
+        onUpdate = function(self)
+           self.buttonStart:collide(self.player)
         end
 }

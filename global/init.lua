@@ -13,7 +13,6 @@ DialogBackground = Tile:extend
         end
 }
 
--- TODO: Subview draws multiple time the same tile
 Dialog = Subview:extend
 {
     onActivate = function(self)
@@ -49,52 +48,32 @@ Cursor = Tile:new
 
 JumpingActor = Class:new
 {
-        triggerKey = "up",
-        
-        jumping = false,
-        
-        gravity = { x = 300, y = 300 },
-        
-        height = 150,
-        
-        length = 150,
+    triggerKey = "up",
 
-        onUpdate = function(self, actor)
-                if(self.jumping == false) then
-                        self.x = actor.x
-                        self.y = actor.y
-                end
-                
-                if(the.keys:justPressed(self.triggerKey) and self.jumping == false) then
-                        self.jumping = true
-                        
-                        actor.x = self:calculateJumpX()
-                        actor.y = self:calculateJumpY()
-                end
-        end,
-        
-        calculateJumpX = function(self)
-                -- calcular hasta donde llega el salto en base a la aceleración
-                if(the.keys:pressed("right")) then
-                        self.x = self.acceleration+self.x
-                end
-                
-                if(the.keys:pressed("left")) then
-                        self.x = self.x-self.acceleration
-                end
-                
-                return self.x
-        end,
-        
-        calculateJumpY = function(self)
-                self.y = self.acceleration+self.y
-                
-                return self.y
+    jumping = false,
+    
+    sound = "",
+
+    onUpdate = function(self, actor)
+        if(the.keys:justPressed(self.triggerKey) and self.jumping == false) then
+            if sound then playSound(self.sound) end
+            self.jumping = true
+            actor.velocity.y = -273
         end
+    end,
+
+    onCollide = function(self, actor)
+        if actor.velocity.y > 0 then
+            actor.velocity.y = 0
+            self.jumping = false
+        end
+    end
 }
 
 MovingActor = Class:new
 {
+    verticalMovement = false,
+    
     onUpdate = function(self, actor)
         if(the.keys:pressed("right")) then
             actor.x = actor.x+5;
@@ -104,12 +83,14 @@ MovingActor = Class:new
             actor.x = actor.x-5;
         end
             
-        if(the.keys:pressed("up")) then
-            actor.y = actor.y-5
-        end
+        if self.verticalMovement then
+            if(the.keys:pressed("up")) then
+                actor.y = actor.y-5
+            end
             
-        if(the.keys:pressed("down")) then
-            actor.y = actor.y+5;
+            if(the.keys:pressed("down")) then
+                actor.y = actor.y+5;
+            end
         end
     end
 }
