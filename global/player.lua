@@ -11,9 +11,14 @@ Player = Tile:extend
 	
 	movement = MovingActor:new(),
 	
+	onNew = function(self)
+		self.shooting = ShootingActor:new{ bullet = Tile:extend{ image = 'global/assets/graphics/bullet.png' } }
+	end,
+	
 	onUpdate = function(self)
 		self.movement:onUpdate(self)
 		self.jump:onUpdate(self)
+		self.shooting:onUpdate(self)
 	end,
 	
 	onCollide = function(self)
