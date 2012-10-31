@@ -4,6 +4,7 @@ DEBUG = true
 require 'zoetrope'
 require 'global'
 require 'menu'
+require 'global/actor'
 require 'global/player'
 
 the.app = App:new
