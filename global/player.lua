@@ -1,14 +1,10 @@
-Player = Actor:extend
+Player = Tile:extend
 {
 	x = 400,
 	y = 50,
 	
-	tile = Tile:extend{ image = 'global/assets/graphics/player.png' },
+	image = 'global/assets/graphics/player.png',
 
-	width = 300,
-
-	height = 300,
-	
 	jump = JumpingActor:new{ triggerKey = " ", sound = "global/assets/sounds/jump.wav" },
 	
 	acceleration = { x = 0, y = 600, rotation = 0 },
@@ -23,6 +19,4 @@ Player = Actor:extend
 	onCollide = function(self)
 		self.jump:onCollide(self)
 	end
-
-
 }
