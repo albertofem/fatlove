@@ -95,9 +95,36 @@ MovingActor = Class:new
     end
 }
 
-ShotingActor = {
-        -- definir que tipo de disparo se hará
-        -- angulo en el que realizar el disparo
-        -- 
+ShootingActor = Class:new
+{
+    -- definir que tipo de disparo se hará
+    -- angulo en el que realizar el disparo
+    
+    angle = 180,
+    
+    triggerKey = "a",
+    
+    shoots = {},
+    
+    onUpdate = function(self, actor)
+        if(the.keys:justPressed(self.triggerKey)) then
+            local newBullet = actor.shooting.bullet:new()
+            
+            print("Creating new bullet", newBullet)
+            
+            newBullet.active = true
+            newBullet.visible = true
+            
+            table.insert(self.shoots, newBullet)
+        end
+        
+        for index, shoot in pairs(self.shoots) do
+            shoot:onUpdate()
+        end
+    end,
+    
+    shoot = function(self, _index)
+        self.shoots[_index]:onUpdate()
+    end
 }
 
