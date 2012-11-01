@@ -1,10 +1,9 @@
 Enemy = Tile:extend
 {
-	id = "enemy", 
 	x = 300,
 	y = 240,
 	
-	life = 1,
+	life = 3,
 
 	image = 'global/assets/graphics/soldier.png',
 	
@@ -19,19 +18,21 @@ Enemy = Tile:extend
 		rotation = 0 
 	},
 	
-	movement = MovingActor:new(),
-	
 	onUpdate = function(self)
-		self.movement:onUpdate(self)
 		self.jump:onUpdate(self)
+		
+		if(self.life <= 0) then
+			self:die()
+		end
 	end,
 	
 	onCollide = function(self, other)
-        self:displace(other) 
-		if type(other) == "player" then
-			self.life = self.life -1,
-			print("colision")
-		end 
 		self.jump:onCollide(self, other)
+		
+		if(other:instanceOf(Bullet)) then
+			playSound("global/assets/sounds/hit.wav")
+			self.life = self.life - 1
+			other:die()
+		end
 	end
 }

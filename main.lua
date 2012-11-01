@@ -16,7 +16,6 @@ the.app = App:new
     
     onRun = function (self)
         self.cursor = Cursor:new()
-        self.view = Menu:new()
     end,
     
     onUpdate = function(self)

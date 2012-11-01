@@ -71,6 +71,23 @@ JumpingActor = Class:new
     end
 }
 
+Bullet = Tile:new
+{
+    image = 'global/assets/graphics/bullet.png',
+
+    speed = {
+        x = 10,
+        y = 10
+    },
+    
+    collisionMap = {},
+    
+    addCollisionMap = function(self, element)
+        print("Adding elemento to collission map: ", element)
+        table.insert(self.collisionMap, element)
+    end
+}
+
 MovingActor = Class:new
 {
     verticalMovement = false,
@@ -112,6 +129,8 @@ ShootingActor = Class:extend
         end
         
         if(the.keys:justPressed(self.triggerKey)) then
+            
+            playSound('global/assets/sounds/shoot.wav')
             
             local bullet = self.bullet:new()
             
@@ -158,10 +177,15 @@ ShootingActor = Class:extend
                         self.x = self.x+self.speed.x
                         self.y = self.y+self.speed.y
                     end
+                    
+                    for index, target in pairs(self.collisionMap) do
+                        self:collide(target)
+                    end
                 end
             end
             
             the.view:add(bullet)
+            
         end
     end
 }

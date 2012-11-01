@@ -1,6 +1,5 @@
 Player = Tile:extend
 {
-	id = "player",
 	x = 400,
 	y = 50,
 	
@@ -23,29 +22,28 @@ Player = Tile:extend
 	
 	shooting = ShootingActor:extend
 	{ 
-		bullet = Tile:new
-		{
-			image = 'global/assets/graphics/bullet.png',
-
-			speed = {
-				x = 10,
-				y = 10
-			}
-		},
+		bullet = Bullet:new(),
 		
-		angle = 0
+		angle = 180
 	},
 	
 	onUpdate = function(self)
 		self.movement:onUpdate(self)
 		self.jump:onUpdate(self)
 		self.shooting:onUpdate(self)
+		
+		if(self.life <= 0) then
+			self:die()
+		end
 	end,
 	
 	onCollide = function(self, other)
-		if other.id == "enemy" then 
-			print("asjkdfasjindioasjn")
-		end
 		self.jump:onCollide(self, other)
+		
+		if(other:instanceOf(Enemy)) then
+			playSound("global/assets/sounds/hit.wav")
+			self.life = self.life - 1
+			self.x = self.x+35
+		end
 	end
 }
