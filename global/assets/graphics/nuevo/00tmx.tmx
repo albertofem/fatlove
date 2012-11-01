@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="14" tilewidth="50" tileheight="50">
+ <tileset firstgid="1" name="01background" tilewidth="50" tileheight="50">
+  <image source="01background.png" width="1280" height="905"/>
+ </tileset>
+ <tileset firstgid="451" name="01cesped" tilewidth="50" tileheight="50">
+  <image source="01cesped.png" width="1280" height="905"/>
+ </tileset>
+ <tileset firstgid="901" name="01Floor" tilewidth="50" tileheight="50">
+  <image source="01Floor.png" width="210" height="211"/>
+ </tileset>
+ <tileset firstgid="917" name="01hojas" tilewidth="50" tileheight="50">
+  <image source="01hojas.png" width="1280" height="905"/>
+ </tileset>
+ <tileset firstgid="1367" name="01Tree" tilewidth="50" tileheight="50">
+  <image source="01Tree.png" width="1280" height="905"/>
+ </tileset>
+ <layer name="Background" width="25" height="14">
+  <data encoding="base64" compression="zlib">
+   eJwNwweUCAQAANA7DuccDudw9r5zhzvjzt5u2M65wVFUVDKihOwyyix7NCmjQdlbgwYZ0ZA9MiKkqJTx3/s/MCAgIJe5DTKPec1nsPkNsYChFrSQhQ2ziEUtZrjFjbCEJS1lpKUtY1nLWd4KVrSSla1iVatZ3SijrWGMsda0lrWNM9461rWe9U0w0QY2tJGNbWJTm9ncFra0la1tY1uTTDbFVNvZ3g52tJOd7WJX0+xmut3NMNMss+1hT3PsZW8f8VH72NfHfNwn7Gd/n/Qpn3aAzzjQQQ52iM861GE+5/MO9wVHONJRvuhoxzjWcY53ghN9yZed5GSnONVXfNVpTneGM53lbF/zdec413nOd4ELXeRil7jUN3zTt3zbd3zXZS73Pd93hStd5Wo/8EM/8mPXuNZP/NR1rneDG93kZre41W1ud4c73eVuP/Nzv/BL97jXr/zab/zWfe73Ow940EMe9nuPeNQf/NGf/Nlj/uJxT3jSU572jGc953kv+KsXveRlr/ibV73m7173hjf9w1v+6V/e9o5/+4//etf//N973veBAYGYy9wGmce85jPY/IZYwFALWsjChlnEohYz3OJGWMKSljLS0paxrOUsbwUrWsnKVrGq1axulNHWMMZYa1rL2sYZbx3rWs/6JphoAxvayMY2sanNbG4LW9rK1raxrUkmm2Kq7WxvBzvayc52satpdjPd7maYaZbZ9rCnOfaytw8BBniRUQ==
+  </data>
+ </layer>
+ <layer name="Tree" width="25" height="14">
+  <data encoding="base64" compression="zlib">
+   eJyV0sdOFQEYBeCrCVelo9iX9l6X9l6X9oIFXdpRQcEHUAEV1AdQaQr4ADY69pWKdLGuLDTF+s0L3MRJvsUk559JTk5lVChURTU11FJHPQ95xGOe8JRnPOd/nib5ZlpopY123tDBW97xng985NN//qNbvodevvODPn7yi9/84W/w3XAo1I/+bPO+nR3sJIVd7GYPe0llH/HyCSSSxGCGkMxQhjGcEYxkFKM55jaN45zgJOlkcIrTZJLFBPmJTGIyU5jKNKYzg5nMYjZzmMt5t9nkkMsFLnKJPPK5zBUWyS9mCUtZxnJWsJJVrGYNa1nHem64LaCQIoop4Sa3KKWMcrbIbw36ZTs72EkKu9jNHvaSyj72c8/tfR5QQWWEfR6RPxr0SxrHOcFJ0sngFKfJJIszvHLbwGsaoyLv86z8uaBfsskhlwtc5BJ55HOZK1zlq9tvdNIVFXmf1+SvB/1SQCFFFFPCTW5RShnl3CaaGGKJC0fe5x3uBv1ynwdUUEkV1dRQSx31PGQMYxnH+HDkfb7gZdAvDbymkSaaaaGVNtp5QwfzmM8CFoYj7/MzX4J++UYnXXTTQy/f+UEfP/nFBjayic3hyPscOCAUGkQ0McQSRzwJJJLEYIaQzFAOuD3IIQ6HI+/zH7ATtGE=
+  </data>
+ </layer>
+ <objectgroup name="Capa de Objetos 1" width="25" height="14" visible="0">
+  <object gid="318" x="71" y="100"/>
+  <object gid="318" x="7" y="53"/>
+  <object gid="318" x="73" y="51"/>
+  <object gid="318" x="118" y="61"/>
+  <object gid="318" x="167" y="97"/>
+  <object gid="318" x="171" y="139"/>
+  <object gid="318" x="159" y="152"/>
+  <object gid="318" x="119" y="153"/>
+  <object gid="318" x="122" y="117"/>
+  <object gid="318" x="122" y="101"/>
+  <object gid="318" x="72" y="171"/>
+  <object gid="318" x="68" y="147"/>
+  <object gid="318" x="68" y="132"/>
+  <object gid="318" x="49" y="122"/>
+  <object gid="318" x="27" y="106"/>
+  <object gid="318" x="18" y="91"/>
+  <object gid="318" x="23" y="169"/>
+  <object gid="318" x="48" y="194"/>
+  <object gid="318" x="86" y="197"/>
+  <object gid="318" x="330" y="137"/>
+  <object gid="318" x="423" y="199"/>
+ </objectgroup>
+ <layer name="Grass" width="25" height="14">
+  <data encoding="base64" compression="zlib">
+   eJy90ekzVlEYAPC396UZlUKFaKWQVKho0aJNi4S00p60aBFFO6X6G019RH1EKX1AP5lm6s47eWWmZ+Y395x7n+ecc58TCv3/qIz7c94bCYX66I9Mr+5v0RjIHbX2GONT7BGsm26kBerfRH7qnNmq/xax9DVazsSZ3/IuytmDdxBLX2Pt/a+IdgfBvgajJzyZ897zQzi2ffrlfeTTFPkDvg8yxGe+MMxXvjHC98Aao+ZjjE+899+zCBMhjnhm/9aPBOM5zGUeicxnAUkkk8JCFrGYVNJIZwkZZLKUZSxnBStZRRbZrGYNOeSSx1ryWUcB69nARgopophNbGYLJZSylW1sZwdl7GQXu9lDOXvZx34OcJAKDnGYIxylkmNUcZxqaqjlBHWc5BSnOcNZzlFPA+e5wEUucZkrXOUajVyniRvc5Ba3aeYOd7nHfVp4QCttPOQR7XTwmCc85RnPecFLOuniFa/p5geEOE2X
+  </data>
+ </layer>
+</map>
