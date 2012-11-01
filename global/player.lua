@@ -5,15 +5,33 @@ Player = Tile:extend
 	
 	image = 'global/assets/graphics/player.png',
 
-	jump = JumpingActor:new{ triggerKey = " ", sound = "global/assets/sounds/jump.wav" },
+	jump = JumpingActor:extend
+	{ 
+		triggerKey = " ", sound = "global/assets/sounds/jump.wav" 
+	},
 	
-	acceleration = { x = 0, y = 600, rotation = 0 },
+	acceleration = {
+		x = 0, 
+		y = 600, 
+		rotation = 0 
+	},
 	
 	movement = MovingActor:new(),
 	
-	onNew = function(self)
-		self.shooting = ShootingActor:new{ bullet = Tile:extend{ image = 'global/assets/graphics/bullet.png' } }
-	end,
+	shooting = ShootingActor:extend
+	{ 
+		bullet = Tile:new
+		{
+			image = 'global/assets/graphics/bullet.png',
+
+			speed = {
+				x = 10,
+				y = 10
+			}
+		},
+		
+		angle = 0
+	},
 	
 	onUpdate = function(self)
 		self.movement:onUpdate(self)
@@ -21,7 +39,7 @@ Player = Tile:extend
 		self.shooting:onUpdate(self)
 	end,
 	
-	onCollide = function(self)
-		self.jump:onCollide(self)
+	onCollide = function(self, other)
+		self.jump:onCollide(self, other)
 	end
 }
