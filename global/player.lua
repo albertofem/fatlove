@@ -43,6 +43,9 @@ Player = Tile:extend
 	end,
 	
 	onCollide = function(self, other)
+		if other.id == "enemy" then 
+			print("asjkdfasjindioasjn")
+		end
 		self.jump:onCollide(self, other)
 	end
 }
