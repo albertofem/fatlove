@@ -14,6 +14,9 @@ Menu = View:extend
                 
                 self.player = Player:new()
                 self:add(self.player)
+
+                self.enemy = Enemy:new()
+                self:add(self.enemy)
         end,
         
         loadAssets = function(self)

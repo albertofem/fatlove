@@ -1,8 +1,11 @@
 Player = Tile:extend
 {
+	id = "player",
 	x = 400,
 	y = 50,
 	
+	life = 3,
+	 
 	image = 'global/assets/graphics/player.png',
 
 	jump = JumpingActor:extend

@@ -6,6 +6,7 @@ require 'global'
 require 'menu'
 require 'global/actor'
 require 'global/player'
+require 'global/enemy'
 
 the.app = App:new
 {
