@@ -32,7 +32,7 @@ StartButton = Button:extend
                 Dialog:activate()
         end,
         
-        onCollide = function(self, other)
-           self:displace(other) 
-        end
+    onCollide = function(self, other)
+        self:displace(other) 
+    end
 }

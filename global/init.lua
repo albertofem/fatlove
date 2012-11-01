@@ -62,10 +62,11 @@ JumpingActor = Class:new
         end
     end,
 
-    onCollide = function(self, actor)
-        if actor.velocity.y > 0 then
+    onCollide = function(self, actor, other)
+        self.jumping = false
+        
+        if actor.velocity.y > 0 and other.x < actor.x+actor.width then
             actor.velocity.y = 0
-            self.jumping = false
         end
     end
 }
@@ -95,7 +96,7 @@ MovingActor = Class:new
     end
 }
 
-ShootingActor = Class:new
+ShootingActor = Class:extend
 {
     -- definir que tipo de disparo se hará
     -- angulo en el que realizar el disparo
@@ -104,27 +105,64 @@ ShootingActor = Class:new
     
     triggerKey = "a",
     
-    shoots = {},
-    
     onUpdate = function(self, actor)
-        if(the.keys:justPressed(self.triggerKey)) then
-            local newBullet = actor.shooting.bullet:new()
-            
-            print("Creating new bullet", newBullet)
-            
-            newBullet.active = true
-            newBullet.visible = true
-            
-            table.insert(self.shoots, newBullet)
+        
+        if self.calculateShootingAngle then
+            self.angle = self:calculateShootingAngle(actor)
         end
         
-        for index, shoot in pairs(self.shoots) do
-            shoot:onUpdate()
+        if(the.keys:justPressed(self.triggerKey)) then
+            
+            local bullet = self.bullet:new()
+            
+            bullet.active = true
+            bullet.visible = true
+            
+            bullet.x = actor.x+5
+            bullet.y = actor.y+5
+            
+            if not bullet.angle then
+                bullet.angle = self.angle
+            end
+            
+            print("Shooting in this angle: ", bullet.angle)
+            
+            if not bullet.onUpdate then
+                bullet.onUpdate = function(self)
+                    if self.angle > 0 and self.angle < 90 then
+                        -- sum x and y
+                        self.x = self.x+self.speed.x
+                        self.y = self.y-self.speed.y
+                    elseif self.angle == 90 then
+                        -- sum y only
+                        self.y = self.y-self.speed.y
+                    elseif self.angle > 90 and self.angle < 180 then
+                        -- diff x and sum y
+                        self.x = self.x-self.speed.x
+                        self.y = self.y-self.speed.y
+                    elseif self.angle == 180 then
+                        -- diff x
+                        self.x = self.x-self.speed.x
+                    elseif self.angle == 0 then
+                        -- diff x
+                        self.x = self.x+self.speed.x
+                    elseif self.angle > 180 and self.angle < 270 then
+                        -- diff x and diff y
+                        self.x = self.x-self.speed.x
+                        self.y = self.y+self.speed.y
+                    elseif self.angle == 270 then
+                        -- diff y
+                        self.y = self.y+self.speed.y
+                    else
+                        -- diff y sum x
+                        self.x = self.x+self.speed.x
+                        self.y = self.y+self.speed.y
+                    end
+                end
+            end
+            
+            the.view:add(bullet)
         end
-    end,
-    
-    shoot = function(self, _index)
-        self.shoots[_index]:onUpdate()
     end
 }
 

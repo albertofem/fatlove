@@ -21,9 +21,7 @@ Player = Tile:extend
 		self.shooting:onUpdate(self)
 	end,
 	
-	onCollide = function(self, other)
-		if (self.y + self.height) < (other.y) then
-			self.jump:onCollide(self)
-		end
+	onCollide = function(self)
+		self.jump:onCollide(self)
 	end
 }
