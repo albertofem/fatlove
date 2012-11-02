@@ -1,0 +1,7 @@
+require 'global/actor/attacking'
+require 'global/actor/crouching'
+require 'global/actor/gravity_aware'
+require 'global/actor/moving'
+require 'global/actor/shooting'
+require 'global/actor/jumping'
+require 'global/actor/actor'
