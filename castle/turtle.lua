@@ -1,22 +1,29 @@
 Turtle = Enemy:extend
 {
-
 	image = 'castle/assets/graphics/KOOPA.png',
 	
+	x = 100,
+	
+	velocity = { y = 1000, x = math.random(1, 10) },
+	
+	movement = SimpleMovementEnemy:new
+	{
+		direction = 1
+	},
+	
 	onCustomNew = function(self)
-		moveEnemy = SimpleMovementEnemy:extend{
-			direction = -1,
-			speed = math.random(50, 400)
-		}
-
-		self:addAction(self.moveEnemy)
-	end,
-
-	doCollide = function(self, other)
-		self:collide(other)
+		self:addAction(self.movement)
 	end,
 	
-	onCollide = function(self, other)
-		other:displace()
+	onCustomCollide = function(self, actor)
+		if(actor:instanceOf(Player)) then
+			if actor.y+actor.height <= self.y+50 then
+				playSound('global/assets/sounds/hittop.wav')
+				actor.velocity.y = -400
+				self:die()
+			else
+				actor:die()
+			end
+		end
 	end
 }

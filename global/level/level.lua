@@ -40,10 +40,24 @@ Level = View:extend
 		end
 		
 		-- Add map if any
-		if self.map then
-			self:add(self.map)
-			self.width = map.width
+		if self.mapFile then
+			self:loadLayers(self.mapFile)
 		end
+		
+		-- Add background layers
+		for index, background in pairs(self.backgrounds) do
+			local layer = Group:new()
+			layer.translateScale.x = background.translateScale
+			layer.translateScale.y = background.translateScale
+			
+			for x = 0, self.width / background.width do
+				x = (-1) * background.width * x
+				local tile = Tile:new{ x = x, y = background.y, image = background.image }
+				layer:add(tile)
+			end
+			
+			self:add(layer)
+		end		
 		
 		-- Add players
 		for index, player in pairs(self.players) do
@@ -61,31 +75,19 @@ Level = View:extend
 		
 		-- Add camera
 		self:add(self.camera)
-		
-		-- Add background layers
-		for index, background in pairs(self.backgrounds) do
-			local layer = Group:new()
-			layer.translateScale.x = background.translateScale
-			layer.translateScale.y = background.translateScale
-			
-			for x = 0, self.width / background.width do
-				x = background.width + x
-				layer:add(Tile:new{ x = x, image = background.image })
-			end
-			
-			self:add(layer)
-		end
 	end,
 
 	onUpdate = function(self)
 		-- Update players
 		for index, player in pairs(self.players) do
 			player:onUpdate()
+			self.map:subcollide(player)
 		end
 		
 		-- Update enemies
 		for index, enemy in pairs(self.enemies) do
 			enemy:onUpdate()
+			self.map:subcollide(enemy)
 		end
 		
 		-- Do the rest with enemies and entities and shit

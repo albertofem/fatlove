@@ -1,6 +1,6 @@
 -- Generic class player
 
-Player = Animation:extend
+Player = ActorAnimation:extend
 {
 	actions = {},
 	
@@ -8,7 +8,7 @@ Player = Animation:extend
 	
 	hit_points = 100,
 	
-	jumping = JumpingActor:new(),
+	jumping = JumpingActor:new{ length = 400 },
 	movement = MovingActor:new(),
 	gravity = GravityAwareActor:new(),
 	attack = AttackingActor:new(),

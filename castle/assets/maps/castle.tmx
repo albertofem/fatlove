@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="25" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="castle" tilewidth="32" tileheight="32">
+  <image source="castle.png" trans="ffffff" width="584" height="669"/>
+  <tile id="113">
+   <properties>
+    <property name="name" value="Floor"/>
+    <property name="solid" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="map" width="50" height="25">
+  <properties>
+   <property name="name" value="Floor"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztw6ENAAAMAjBu5n/BBXOTbdIEAAAA4EfV8wD2zVkR
+  </data>
+ </layer>
+</map>
