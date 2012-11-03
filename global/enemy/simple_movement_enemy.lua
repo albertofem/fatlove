@@ -2,13 +2,11 @@
 
 SimpleMovementEnemy = Class:extend
 {
-	speed = 0,
+	id = "movement_enemy",
+	
 	direction = 1,
 
-    onNew = function(self)        
-    end,
-
     onUpdate = function(self, enemy)
-    	enemy.x = enemy.x + (self.direction * self.speed)
+    	enemy.x = (self.direction) * (enemy.x + enemy.velocity.x)
 	end
 }
