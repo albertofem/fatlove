@@ -13,8 +13,28 @@ Enemy = Tile:extend
 	
 	gravity = GravityAwareActor:new(),
 	
+	triggerBox = nil,
+	
+	doCollide = function(self, other)
+		if self.triggerBox then
+			self.triggerBox:collide(other)
+		end
+		
+		self:collide(other)
+	end,
+	
 	onNew = function(self)
 		self:addAction(self.gravity)
+		
+		if self.triggerBox then
+			self.triggerBox.x = self.x - self.triggerX
+			self.triggerBox.y = self.y - self.triggerY
+			
+			self.triggerBox.width = self.width + self.triggerX*2
+			self.triggerBox.height = self.height + self.triggerY*2
+			
+			self.triggerBox.parent = self
+		end
 		
 		if self.onCustomNew then
 			self:onCustomNew()
@@ -25,11 +45,19 @@ Enemy = Tile:extend
 		for index, action in pairs(self.actions) do
 			if action.onCollide then action:onCollide(self, other, horizOverlap, vertOverlap) end
 		end
+		
+		if self.onCustomCollide then
+			self:onCustomCollide(other)
+		end
 	end,
 	
 	onUpdate = function(self)
 		for index, action in pairs(self.actions) do
 			if action.onUpdate then action:onUpdate(self) end
+		end
+		
+		if self.onCustomUpdate then
+			self:onCustomUpdate()
 		end
 	end,
 	
