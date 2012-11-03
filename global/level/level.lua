@@ -16,7 +16,7 @@ Level = View:extend
 	
 	started = false,
 	
-	level_duration = 1,
+	level_duration = 120,
 	
 	camera = Sprite:new
 	{
@@ -25,7 +25,7 @@ Level = View:extend
 		
 		visible = false,
 		
-		acceleration = { x = -1000, y = 0, rotation = 0 },
+		acceleration = { x = 100000, y = 0, rotation = 0 },
 		
 		onNew = function(self)
 			self.x = love.graphics.getWidth() / 2
@@ -52,11 +52,12 @@ Level = View:extend
 			end
 			
 			self:add(layer)
-		end			
+		end	
 		
 		-- Add map if any
 		if self.mapFile then
 			self:loadLayers(self.mapFile)
+			self.width = self.map.width
 		end	
 		
 		-- Add players
@@ -71,6 +72,11 @@ Level = View:extend
 			if enemy.triggerBox then
 				self:add(enemy.triggerBox)
 			end
+		end
+		
+		-- Add emitters
+		for index, emitter in pairs(self.emitters) do
+			self:add(emitter)
 		end
 		
 		-- Add camera

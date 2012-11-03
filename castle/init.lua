@@ -4,12 +4,13 @@ require 'castle/thwomp'
 require 'castle/background'
 require 'castle/turtle'
 require 'castle/floor'
+require 'castle/lava_burst'
 
 CastleLevel = Level:extend
 {
     width = 5000,
     
-    mapFile = 'castle/assets/maps/castle.lua',
+    mapFile = 'global/assets/graphics/mapa/mapa32x32.lua',
     
     players = {
         main_player = Fario:new
@@ -23,13 +24,23 @@ CastleLevel = Level:extend
     backgrounds = {
         Background:new{
             image = 'global/assets/graphics/mapa/background02.png',
-            translateScale = 0.25
+            translateScale = 0.55
+        },
+        Background:new{
+            width = 1200,
+            image = 'global/assets/graphics/mapa/Fdfario.png',
+            translateScale = 0.35
         },
         Background:new{
             width = 800,
             image = 'global/assets/graphics/mapa/columna01.png',
-            translateScale = 0.5
-        }      
+            translateScale = 0.1
+        },
+        Background:new
+        {
+            image = 'global/assets/graphics/mapa/lava.png',
+            translateScale = 1
+        }
     },
     
     thwomp = Thwomp:new
@@ -41,10 +52,17 @@ CastleLevel = Level:extend
     {
         id = "turtle"
     },
+    
+    turtle2 = Turtle:new
+    {
+        x = 300,
+    },
 
     onCustomNew = function(self)
         self:addEnemy(self.thwomp)
+       
         self:addEnemy(self.turtle)
+        self:addEnemy(self.turtle2)
 
         self.timer:start{ delay = 1, func = self.startLevel, arg = { self } }
     end,

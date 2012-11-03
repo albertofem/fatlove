@@ -37,7 +37,7 @@ Enemy = Tile:extend
 		end
 		
 		if self.onCustomCollide then
-			self:onCustomCollide(other)
+			self:onCustomCollide(other, horizOverlap, vertOverlap)
 		end
 	end,
 	

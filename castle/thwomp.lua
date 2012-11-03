@@ -29,13 +29,17 @@ Thwomp = Enemy:extend
 	
 	onCustomUpdate = function(self)
 		if self.y < 0 then
+			self.y = 0
+			
 			self.loading = false
 			self.falling = false
 			self.velocity.y = 0
 		end
 	end,
 	
-	onCustomCollide = function(self, other)
+	onCustomCollide = function(self, other, horizOverlap, vertOverlap)
+		self.y = self.y-vertOverlap
+		
 		if other:instanceOf(Player) then
 			other.jumping.canJump = false
 			other.velocity.y = 0

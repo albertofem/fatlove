@@ -1,7 +1,7 @@
 MovingActor = Class:new
 {
     speed = {
-        x = 5,
+        x = 25,
         y = 5
     },
     

@@ -8,6 +8,7 @@ GravityAwareActor = Class:extend
                 
                 -- Update animation to walking
                 if other:instanceOf(Floor) then
+                    actor.y = actor.y+vertOverlap
                     actor:switchSequence('walking')
                 end
             end
