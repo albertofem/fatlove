@@ -185,7 +185,7 @@ Sprite = Class:extend{
 				-- calculate overlaps and call onCollide()
 				local horizOverlap = math.min(right, othRight) - math.max(self.x, other.x)
 				local vertOverlap = math.min(bottom, othBottom)- math.max(self.y, other.y)
-			
+
 				if self.onCollide then
 					self:onCollide(other, horizOverlap, vertOverlap)
 				end
