@@ -15,14 +15,16 @@ Turtle = Enemy:extend
 		self:addAction(self.movement)
 	end,
 	
-	onCustomCollide = function(self, actor)
-		if(actor:instanceOf(Player)) then
-			if actor.y+actor.height <= self.y+50 then
+	onCustomCollide = function(self, other, horizOverlap, vertOverlap)
+		self.y = self.y-vertOverlap
+		
+		if(other:instanceOf(Player)) then
+			if other.y+other.height <= self.y+50 then
 				playSound('global/assets/sounds/hittop.wav')
-				actor.velocity.y = -400
+				other.velocity.y = -400
 				self:die()
 			else
-				actor:die()
+				other:die()
 			end
 		end
 	end

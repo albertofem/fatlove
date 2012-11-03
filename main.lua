@@ -1,5 +1,5 @@
-STRICT = true
-DEBUG = true
+STRICT = false
+DEBUG = false
 
 -- Required generic libraries
 require 'zoetrope'
