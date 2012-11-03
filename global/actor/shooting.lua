@@ -2,7 +2,7 @@ ShootingActor = Class:extend
 {
     angle = 180,
     
-    triggerKey = "a",
+    triggerKey = "s",
     
     onUpdate = function(self, actor)
 		

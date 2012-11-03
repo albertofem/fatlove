@@ -16,7 +16,7 @@ Level = View:extend
 	
 	started = false,
 	
-	level_duration = 10,
+	level_duration = 1,
 	
 	camera = Sprite:new
 	{
@@ -25,7 +25,7 @@ Level = View:extend
 		
 		visible = false,
 		
-		acceleration = { x = -5000, y = 0, rotation = 0 },
+		acceleration = { x = -1000, y = 0, rotation = 0 },
 		
 		onNew = function(self)
 			self.x = love.graphics.getWidth() / 2
@@ -34,6 +34,7 @@ Level = View:extend
 	},
 	
 	onNew = function(self)
+		
 		-- Add map if any
 		if self.map then
 			self:add(self.map)
@@ -41,14 +42,12 @@ Level = View:extend
 		
 		-- Add players
 		for index, player in pairs(self.players) do
-			assert(player.main_resource, 'Player must have a main resource')
-			self:add(player.main_resource)
+			self:add(player)
 		end
 		
 		-- Add enemies
 		for index, enemy in pairs(self.enemies) do
-			assert(player.main_resource, 'Enemy must have a main resource')
-			self:add(enemy.main_resource)
+			self:add(enemy)
 		end
 		
 		-- Add camera
@@ -70,11 +69,9 @@ Level = View:extend
 		
 		-- Do the rest with enemies and entities and shit
 		if self.start_level and self.started == false then
-			self:panTo(self.camera, self.level_duration)
+			self:panTo(self.camera, self.level_duration, self.onLevelComplete, 'linear')
 			self.started = true
 		end
-		
-		
 	end,
 	
 	addPlayer = function(self, player)

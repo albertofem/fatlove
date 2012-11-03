@@ -5,3 +5,16 @@ require 'global/actor/moving'
 require 'global/actor/shooting'
 require 'global/actor/jumping'
 require 'global/actor/actor'
+
+function tprint (tbl, indent)
+  if not indent then indent = 0 end
+  for k, v in pairs(tbl) do
+    formatting = string.rep(" ", indent) .. k .. ": "
+    if type(v) == "table" then
+      print(formatting)
+      tprint(v, indent+1)
+    else
+      print(formatting .. v)
+    end
+  end
+end

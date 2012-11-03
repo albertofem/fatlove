@@ -2,14 +2,14 @@ JumpingActor = Class:extend
 {
     triggerKey = "up",
 
-    jumping = false,
+    canJump = true,
     
-    sound = nil,
+    sound = 'global/assets/sounds/jump.wav',
 
     onUpdate = function(self, actor)
-        if(the.keys:justPressed(self.triggerKey) and self.jumping == false) then
+        if(the.keys:justPressed(self.triggerKey) and self.canJump == true) then
             if self.sound then playSound(self.sound) end
-            self.jumping = true
+            self.canJump = false
             actor.velocity.y = -273
 		end
     end

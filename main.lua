@@ -16,7 +16,6 @@ the.app = App:new
 	
 	onNew = function(self)
 		if arg[#arg] == "-debug" then require("mobdebug").start() end
-		
 		love.mouse.setVisible(false)
 	end,
 
