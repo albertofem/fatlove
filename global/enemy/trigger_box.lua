@@ -1,7 +1,6 @@
 TriggerBox = Fill:extend
 {
-	solid = false,
-	
+	solid = true,
 	parent = nil,
 	
 	border = { 255, 255, 255 },

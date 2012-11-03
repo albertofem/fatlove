@@ -7,6 +7,8 @@ Player = ActorAnimation:extend
 	invincible = false,
 	
 	hit_points = 100,
+
+	direction = "right",
 	
 	jumping = JumpingActor:new{ length = 400 },
 	movement = MovingActor:new(),

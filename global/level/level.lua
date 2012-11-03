@@ -39,11 +39,6 @@ Level = View:extend
 			self:onCustomNew()
 		end
 		
-		-- Add map if any
-		if self.mapFile then
-			self:loadLayers(self.mapFile)
-		end
-		
 		-- Add background layers
 		for index, background in pairs(self.backgrounds) do
 			local layer = Group:new()
@@ -57,7 +52,12 @@ Level = View:extend
 			end
 			
 			self:add(layer)
-		end		
+		end			
+		
+		-- Add map if any
+		if self.mapFile then
+			self:loadLayers(self.mapFile)
+		end	
 		
 		-- Add players
 		for index, player in pairs(self.players) do
@@ -80,14 +80,14 @@ Level = View:extend
 	onUpdate = function(self)
 		-- Update players
 		for index, player in pairs(self.players) do
-			player:onUpdate()
 			self.map:subcollide(player)
+			player:onUpdate()
 		end
 		
 		-- Update enemies
 		for index, enemy in pairs(self.enemies) do
-			enemy:onUpdate()
 			self.map:subcollide(enemy)
+			enemy:onUpdate()
 		end
 		
 		-- Do the rest with enemies and entities and shit
