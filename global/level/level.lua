@@ -34,10 +34,15 @@ Level = View:extend
 	},
 	
 	onNew = function(self)
+		-- Custom initializator
+		if self.onCustomNew then
+			self:onCustomNew()
+		end
 		
 		-- Add map if any
 		if self.map then
 			self:add(self.map)
+			self.width = map.width
 		end
 		
 		-- Add players
@@ -48,29 +53,68 @@ Level = View:extend
 		-- Add enemies
 		for index, enemy in pairs(self.enemies) do
 			self:add(enemy)
+			
+			if enemy.triggerBox then
+				self:add(enemy.triggerBox)
+			end
 		end
 		
 		-- Add camera
 		self:add(self.camera)
 		
-		if self.onCustomNew then
-			self:onCustomNew()
+		-- Add background layers
+		for index, background in pairs(self.backgrounds) do
+			local layer = Group:new()
+			layer.translateScale.x = background.translateScale
+			layer.translateScale.y = background.translateScale
+			
+			for x = 0, self.width / background.width do
+				x = background.width + x
+				layer:add(Tile:new{ x = x, image = background.image })
+			end
+			
+			self:add(layer)
 		end
 	end,
 
 	onUpdate = function(self)
+		-- Update players
 		for index, player in pairs(self.players) do
 			player:onUpdate()
 		end
 		
-		if self.onCustomUpdate then
-			self:onCustomUpdate()
+		-- Update enemies
+		for index, enemy in pairs(self.enemies) do
+			enemy:onUpdate()
 		end
 		
 		-- Do the rest with enemies and entities and shit
 		if self.start_level and self.started == false then
 			self:panTo(self.camera, self.level_duration, self.onLevelComplete, 'linear')
 			self.started = true
+		end
+		
+		for index, player in pairs(self.players) do
+			-- Collide enemies and players
+			for idx, enemy in pairs(self.enemies) do
+				player:collide(enemy)
+				
+				if enemy.triggerBox then
+					player:collide(enemy.triggerBox)
+				end
+			end
+			
+			-- Each player with itself
+			for idx2, player_target in pairs(self.players) do
+				if not index == idx2 then
+					player_target:collide(player)
+				end
+			end
+		end
+		
+		-- Custom updates
+		if self.onCustomUpdate then
+			self:onCustomUpdate()
 		end
 	end,
 	

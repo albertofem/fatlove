@@ -36,6 +36,10 @@ Player = Animation:extend
 		for index, action in pairs(self.actions) do
 			if action.onUpdate then action:onUpdate(self) end
 		end
+		
+		if self.onCustomUpdate then
+			self:onCustomUpdate()
+		end
 	end,
 	
 	addAction = function(self, action)

@@ -13,16 +13,6 @@ Enemy = Tile:extend
 	
 	gravity = GravityAwareActor:new(),
 	
-	triggerBox = nil,
-	
-	doCollide = function(self, other)
-		if self.triggerBox then
-			self.triggerBox:collide(other)
-		end
-		
-		self:collide(other)
-	end,
-	
 	onNew = function(self)
 		self:addAction(self.gravity)
 		
