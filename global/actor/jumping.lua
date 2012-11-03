@@ -23,6 +23,14 @@ JumpingActor = Class:extend
 			
             self.canJump = false
             actor.velocity.y = -1 * self.length
+        elseif(not the.keys:justPressed(self.triggerKey) and self.canJump == true) then
+        	actor:switchSequence('walking')
+			
+			if the.keys:pressed(actor.movement.leftKey) then
+				actor:play('left')
+			else
+				actor:play('right')
+			end
 		end
 		
 		if self.canJump == false then
