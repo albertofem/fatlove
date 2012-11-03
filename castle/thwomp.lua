@@ -1,35 +1,28 @@
 Thwomp = Enemy:extend
 {
 	triggerX = 50,
-	triggerY = 50000,
+	triggerY = love.graphics.getHeight(),
 	
 	image = 'castle/assets/graphics/thwomp.gif',
 	
-	triggerBox = Sprite:new
+	triggerBox = TriggerBox:new
 	{
-		parent = nil,
-		
 		onCollide = function(self, other)
 			self.parent.velocity.y = 800
 		end
 	},
 	
-	onNew = function(self)
-		self.triggerBox.x = self.x - self.triggerX
-		self.triggerBox.y = self.y - self.triggerY
-		
-		self.triggerBox.width = self.width + self.triggerX*2
-		self.triggerBox.height = self.height + self.triggerY*2
-		
-		self.triggerBox.parent = self
+	onCustomUpdate = function(self)
+		if self.y < 0 then
+			self.velocity.y = 0
+		end
 	end,
 	
-	doCollide = function(self, other)
-		self:collide(other)
-		self.triggerBox:collide(other)
+	onCustomCollide = function(self)
+		the.view.timer:start{ delay = 1, func = self.goUp, arg = { self } }
 	end,
 	
-	onCollide = function(self, other)
-		other:displace()
+	goUp = function(self)
+		self.velocity.y = -300
 	end
 }

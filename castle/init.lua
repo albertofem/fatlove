@@ -36,6 +36,8 @@ CastleLevel = Level:extend
     {
         id = "suelo",
         
+        solid = true,
+        
         width = 5000, height = 100,
         x = - 5000 + love.graphics.getWidth(),
         y = love.graphics.getHeight() - 100,
@@ -71,6 +73,7 @@ CastleLevel = Level:extend
     onCustomUpdate = function(self)
         self.floor:collide(self.players['main_player'])
         self.floor:collide(self.players['second_player'])
+        self.floor:collide(self.thwomp)
         self.players['main_player']:collide(self.players['second_player'])
         self.thwomp:doCollide(self.players['main_player'])
     end,

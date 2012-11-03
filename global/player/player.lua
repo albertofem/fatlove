@@ -1,6 +1,6 @@
 -- Generic class player
 
-Player = Fill:extend
+Player = Animation:extend
 {
 	actions = {},
 	
