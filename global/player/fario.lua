@@ -18,7 +18,15 @@ Fario = Player:extend
 			jumping = { frames = { 1 }, fps = 25 },
 			falling = { frames = { 2 }, fps = 25 },
 			floor = { frames = { 3, 4, 5 }, fps = 25 },
+		},
+
+		waiting = 
+		{
+			image = 'global/assets/graphics/fario/run.png',
+			
+			waiting = { frames = { 1 }, fps = 25 },
 		}
+		
 	},
 	
 	onCustomUpdate = function(self)
