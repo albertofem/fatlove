@@ -1,7 +1,7 @@
 GravityAwareActor = Class:extend
 {
     onCollide = function(self, actor, other, horizOverlap, vertOverlap)
-        if other.solid then  
+        if other.solid and not other:instanceOf(TriggerBox) then  
             if actor.jumping then
                 actor.jumping.canJump = true
                 actor.jumping:onFloor(actor)

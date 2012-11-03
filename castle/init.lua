@@ -22,16 +22,14 @@ CastleLevel = Level:extend
     
     backgrounds = {
         Background:new{
+            image = 'global/assets/graphics/mapa/background02.png',
             translateScale = 0.25
         },
         Background:new{
-            y = 100,
+            width = 800,
+            image = 'global/assets/graphics/mapa/columna01.png',
             translateScale = 0.5
-        },
-        Background:new{
-            y = 200,
-            translateScale = 1
-        }        
+        }      
     },
     
     thwomp = Thwomp:new
