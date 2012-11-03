@@ -16,10 +16,12 @@ JumpingActor = Class:extend
 			actor:switchSequence('jumping')
 			
 			if the.keys:pressed(actor.movement.leftKey) then
-				actor:play('left')
+				actor.flipX = true
 			else
-				actor:play('right')
+				actor.flipX = false
 			end
+			
+			actor:play('jumping')
 			
             self.canJump = false
             actor.velocity.y = -1 * self.length
@@ -27,19 +29,23 @@ JumpingActor = Class:extend
         	actor:switchSequence('walking')
 			
 			if the.keys:pressed(actor.movement.leftKey) then
-				actor:play('left')
+				actor.flipX = true
 			else
-				actor:play('right')
+				actor.flipX = false
 			end
+				
+			actor:play('walking')
 		end
 		
 		if self.canJump == false then
 			if actor.velocity.y >= 0 then
 				if the.keys:pressed(actor.movement.leftKey) then
-					actor:play('falling_left')
+					actor.flipX = true
 				else
-					actor:play('falling_right')
+					actor.flipX = false
 				end
+					
+				actor:play('falling')
 			end
 		end
     end,
@@ -47,10 +53,12 @@ JumpingActor = Class:extend
 	onFloor = function(self, actor)
 		if actor:activeSequence('jumping') then
 			if actor.velocity.x >= 0 then
-				actor:play('floor_right')
+				actor.flipX = true
 			else
-				actor:play('floor_left')
+				actor.flipX = false
 			end
+			
+			actor:play('floor')
 		end
 	end
 }

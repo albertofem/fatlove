@@ -8,21 +8,16 @@ Fario = Player:extend
 		{
 			image = 'global/assets/graphics/fario/run.png',
 			
-			right = { frames = { 1, 2, 3, 4, 5, 6, 7 }, fps = 25 },
-			left = { frames = { 8, 9, 10, 11, 12, 13, 14 }, fps = 25 }
-			--left = { frames = { 1, 2, 3, 4, 5, 6, 7 }, fps = 25 }
+			walking = { frames = { 1, 2, 3, 4, 5, 6, 7 }, fps = 25 },
 		},
 		
 		jumping =
 		{
 			image = 'global/assets/graphics/fario/jump.png',
 			
-			right = { frames = { 1 }, fps = 25 },
-			left = { frames = { 6 }, fps = 25 },
-			falling_right = { frames = { 2 }, fps = 25 },
-			falling_left = { frames = { 7 }, fps = 25 },
-			floor_right = { frames = { 3, 4, 5 }, fps = 25 },
-			floor_left = { frames = { 8, 9, 10 }, fps = 25 },
+			jumping = { frames = { 1 }, fps = 25 },
+			falling = { frames = { 2 }, fps = 25 },
+			floor = { frames = { 3, 4, 5 }, fps = 25 },
 		}
 	},
 	
