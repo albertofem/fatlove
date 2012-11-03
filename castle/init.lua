@@ -38,6 +38,7 @@ CastleLevel = Level:extend
         },
         Background:new
         {
+            width = 800,
             image = 'global/assets/graphics/mapa/lava.png',
             translateScale = 1
         }
