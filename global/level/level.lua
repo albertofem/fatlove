@@ -17,6 +17,8 @@ Level = View:extend
 	started = false,
 	
 	level_duration = 120,
+
+	--maxVisible = ,
 	
 	camera = Sprite:new
 	{
