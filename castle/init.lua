@@ -2,6 +2,7 @@
 
 require 'castle/thwomp'
 require 'castle/background'
+require 'castle/turtle'
 
 CastleLevel = Level:extend
 {
@@ -63,10 +64,24 @@ CastleLevel = Level:extend
         id = "thwomp"
     },
     
+
+    turtle = Turtle:new
+    {
+        id = "turtle"
+    },
+
     onCustomNew = function(self)
         self:add(self.floor)
+<<<<<<< HEAD
         self:addEnemy(self.thwomp)
 
+=======
+        self:add(self.thwomp)
+        self:add(self.thwomp.triggerBox)
+
+        self:add(self.turtle)
+        
+>>>>>>> d817af349b346a7e042f965a09d33ae2c484446c
         self.timer:start{ delay = 1, func = self.startLevel, arg = { self } }
     end,
     
