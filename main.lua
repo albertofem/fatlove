@@ -15,7 +15,6 @@ the.app = App:new
 	name = "Princess Madness", -- Cambiar cuando sepamos nombre
 	
 	onNew = function(self)
-		if arg[#arg] == "-debug" then require("mobdebug").start() end
 		love.mouse.setVisible(false)
 	end,
 

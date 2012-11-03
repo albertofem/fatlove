@@ -5,8 +5,7 @@ FireBurst = Tile:extend
 
 LavaBurst = Emitter:extend
 {
-	min = 
-	{ 
+	min = { 
 		velocity = 
 		{ 
 			x = -100, 
@@ -18,8 +17,7 @@ LavaBurst = Emitter:extend
 		alpha = 0.25 
 	},
 	
-    max = 
-	{
+    max = {
 		velocity = 
 		{ 
 			x = 100, 

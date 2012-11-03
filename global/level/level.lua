@@ -59,7 +59,6 @@ Level = View:extend
 		-- Add map if any
 		if self.mapFile then
 			self:loadLayers(self.mapFile)
-			self.width = self.map.width
 		end	
 		
 		-- Add players
