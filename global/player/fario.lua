@@ -7,6 +7,14 @@ Fario = Player:extend
 	
 	powerUp = false,
 	
+	life = 3,
+	
+	inmune = false,
+	
+	blink = Tween:new(),
+	
+	alpha = 1,
+	
 	sequencePool = {
 		walking = 
 		{
@@ -42,9 +50,29 @@ Fario = Player:extend
 	end,
 	
 	onCustomCollide = function(self, other)
-		if(other:instanceOf(BigBurst) or other:instanceOf(HeartBullet)) then
-			self:die()
+		if self.inmune then
+			return
 		end
+		
+		if(other:instanceOf(BigBurst) or other:instanceOf(HeartBullet) or other:instanceOf(Turtle)) then
+			if self.life <= 0 then
+				self:onDie()
+			else
+				self.life = self.life - 1
+				self:onHit()
+			end
+		end
+	end,
+	
+	onHit = function(self)
+		self.inmune = true
+		
+		the.view.tween:start{ target = self, ease = 'quadInOut', prop = 'alpha', to = 0, duration = 2, onComplete = Tween.reverse }
+		the.view.timer:start{ delay = 2, func = self.onInmuneEnd, arg = { self } }
+	end,
+	
+	onInmuneEnd = function(self)
+		self.inmune = false
 	end,
 	
 	onPowerUp = function(self)

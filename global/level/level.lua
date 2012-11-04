@@ -80,6 +80,16 @@ Level = View:extend
 		
 		-- Add camera
 		self:add(self.camera)
+		
+		-- Add GUI
+		self:add(the.scoreboard)
+		self:add(the.scoreboard.background)
+		
+		self:add(the.timeLimit)
+		self:add(the.timeLimit.background)
+		
+		-- Set time limit
+		the.timeLimit:setTimeLimit(self.level_duration)
 	end,
 
 	onUpdate = function(self)
@@ -87,14 +97,18 @@ Level = View:extend
 		for index, player in pairs(self.players) do
 			self.map:subcollide(player)
 			self.map:subdisplace(player)
+			
 			player:onUpdate()
 		end
 		
-		-- Do the rest with enemies and entities and shit
+		-- Start camera panting
 		if self.start_level and self.started == false then
 			self:panTo(self.camera, self.level_duration, self.onLevelComplete, 'linear')
 			self.started = true
 		end
+		
+		-- Collide enemies with map
+		self.map:subdisplace(self.enemies)
 		
 		-- Custom updates
 		if self.onCustomUpdate then

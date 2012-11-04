@@ -59,13 +59,13 @@
   </data>
  </layer>
  <objectgroup name="enemies" width="400" height="25">
-  <object name="Turtle" x="462" y="499" width="82" height="107"/>
+  <object name="Turtle" x="448" y="512" width="64" height="96"/>
   <object name="LavaBurst" x="10271" y="702" width="32" height="31">
    <properties>
     <property name="name" value="LavaBurst"/>
    </properties>
   </object>
-  <object name="Thwomp" x="896" y="33" width="162" height="157"/>
+  <object name="Thwomp" x="896" y="33" width="192" height="160"/>
   <object name="LavaBurst" x="9342" y="706" width="32" height="31">
    <properties>
     <property name="name" value="LavaBurst"/>
