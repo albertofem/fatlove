@@ -86,7 +86,7 @@ Princess = ActorAnimation:extend
 	end,
 	
 	onLevelStart = function(self)
-		self.velocity.x = 240
+		self.velocity.x = 255
 		self:createAttackTimer()
 		
 		self:switchSequence('flying')

@@ -1,4 +1,3 @@
-Background = Tile:extend
+Floor = Tile:extend
 {
-	image = 'castle/assets/graphics/back1.png'
 }

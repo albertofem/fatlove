@@ -100,5 +100,17 @@
   <object name="PowerUp" x="34500" y="386" width="54" height="52"/>
   <object name="Thwomp" x="37600" y="2" width="134" height="136"/>
   <object name="PowerUp" x="38402" y="388" width="52" height="50"/>
+  <object name="Pwned" x="51040" y="480" width="32" height="32"/>
+  <object name="Finish" x="51168" y="64" width="32" height="32"/>
+  <object name="LavaBurst" x="39040" y="704" width="32" height="32"/>
+  <object name="LavaBurst" x="40832" y="704" width="32" height="32"/>
+  <object name="LavaBurst" x="43456" y="704" width="32" height="32"/>
+  <object name="LavaBurst" x="43488" y="704" width="32" height="32"/>
+  <object name="LavaBurst" x="43520" y="704" width="32" height="32"/>
+  <object name="LavaBurst" x="43552" y="704" width="32" height="32"/>
+  <object name="LavaBurst" x="43424" y="704" width="32" height="32"/>
+  <object name="LavaBurst" x="50368" y="512" width="32" height="32"/>
+  <object name="LavaBurst" x="50400" y="512" width="32" height="32"/>
+  <object name="LavaBurst" x="50432" y="512" width="32" height="32"/>
  </objectgroup>
 </map>

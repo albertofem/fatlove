@@ -128,6 +128,7 @@ LifeBoard = Text:extend
     end,
 
     onUpdate = function(self)
+        self.text = the.player.fario.lifes
         self.x = (-1) * the.view.translate.x + love.graphics.getWidth()-100
     end
 } 

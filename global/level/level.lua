@@ -49,6 +49,10 @@ Level = View:extend
 				x = background.width * x
 				local tile = Tile:new{ x = x, y = background.y, image = background.image }
 				layer:add(tile)
+				
+				if background:instanceOf(Floor) then
+					self.floor = background
+				end
 			end
 			
 			self:add(layer)
@@ -120,6 +124,11 @@ Level = View:extend
 		-- Custom updates
 		if self.onCustomUpdate then
 			self:onCustomUpdate()
+		end
+		
+		-- Collide floor
+		if self.floor then
+			self.floor:collide(the.player.fario)
 		end
 	end,
 	

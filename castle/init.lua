@@ -36,25 +36,26 @@ CastleLevel = Level:extend
     princess = Princess:new(),
     
     backgrounds = {
-        Background:new
+        Tile:new
         {
             image = 'global/assets/graphics/mapa/background02.png',
             translateScale = 0.35
         },
-        Background:new
+        Tile:new
         {
             width = 1200,
             image = 'global/assets/graphics/mapa/Fdfario.png',
             translateScale = 0.65
         },
-        Background:new
+        Tile:new
         {
             width = 800,
             image = 'global/assets/graphics/mapa/columna01.png',
             translateScale = 0.90
         },
-        Background:new
+        Floor:new
         {
+            collidable = true,
             image = 'global/assets/graphics/mapa/chocolate.png',
             translateScale = 1
         }
@@ -62,7 +63,7 @@ CastleLevel = Level:extend
 
     onCustomNew = function(self)
 		love.mouse.setVisible(false)
-        
+
         self.timer:start{ delay = 1, func = self.showPrincess, arg = { self } }
         self.timer:start{ delay = 6, func = self.startLevel, arg = { self } }
     end,
@@ -72,6 +73,10 @@ CastleLevel = Level:extend
         self.princess:onShow()
         
         self.timer:start{ delay = 3, func = self.princess.onStop, arg = { self.princess } }
+    end,
+    
+    onCustomUpdate = function(self)
+        self.princess:collide(self.players.main_player)
     end,
     
     onLevelComplete = function(self)

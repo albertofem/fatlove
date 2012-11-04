@@ -8,6 +8,8 @@ require 'global'
 -- Require levels and stuff
 require 'castle'
 require 'menu'
+require 'win'
+require 'end'
 
 the.app = App:new
 {

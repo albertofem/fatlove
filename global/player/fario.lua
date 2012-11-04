@@ -7,7 +7,7 @@ Fario = Player:extend
 	
 	powerUp = false,
 	
-	lifes = 3,
+	lifes = 10,
 	
 	inmune = false,
 	
@@ -42,6 +42,10 @@ Fario = Player:extend
 	},
 	
 	onCustomUpdate = function(self)
+		if self.lifes <= 0 then
+			self:onDie()
+		end
+		
 		if self:activeSequence('jumping') then
 			if not self.currentName == 'floor_right' and not self.currentName == 'floor_left' then
 				self:switchSequence('walking')
@@ -58,29 +62,45 @@ Fario = Player:extend
 	end,
 	
 	onCustomCollide = function(self, other)
-		if(other:instanceOf(BigBurst) or other:instanceOf(HeartBullet)) then
+		if(other:instanceOf(BigBurst) or other:instanceOf(HeartBullet) or other:instanceOf(Thwomp)) then
 			self:hit()
+		end
+		
+		if(other:instanceOf(HeartBullet)) then
+			other:die()
+		end
+		
+		if(other:instanceOf(Princess)) then
+			playSound('global/assets/music/hit.ogg')
+			
+			the.app.view = End:new()
+		end
+		
+		if(other:instanceOf(Background)) then
+			playSound('global/assets/music/hit.ogg')
+			
+			the.app.view = End:new()
 		end
 	end,
 	
 	hit = function(self)
 		if self.inmune then
-			return
+			return nil
 		end
 		
-		if self.life <= 0 then
-			self:onDie()
-		else
-			self.life = self.life - 1
-			self:onHit()
-		end
+		playSound('global/assets/music/hit.ogg')
+		
+		self.lifes = self.lifes-1
 	end,
 	
 	onHit = function(self)
 		self.inmune = true
 		
-		the.view.tween:start{ target = self, ease = 'quadInOut', prop = 'alpha', to = 0, duration = 2, onComplete = Tween.reverse }
 		the.view.timer:start{ delay = 2, func = self.onInmuneEnd, arg = { self } }
+	end,
+	
+	onDie = function(self)
+		the.app.view = End:new()
 	end,
 	
 	onInmuneEnd = function(self)
