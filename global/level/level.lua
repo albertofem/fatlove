@@ -16,7 +16,7 @@ Level = View:extend
 	
 	started = false,
 	
-	level_duration = 140,
+	level_duration = 160,
 	
 	floor = nil,
 	

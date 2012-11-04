@@ -39,7 +39,7 @@ BigEmitter = Emitter:extend
 		scale = 3
 	},
 	
-    period = 2,
+    period = 3,
 	
 	onNew = function(self)
 		self:loadParticles(BigBurst, 5)

@@ -4,7 +4,7 @@ JumpingActor = Class:extend
 
     canJump = true,
 	
-	length = 300,
+	length = 400,
     
     sound = 'global/assets/sounds/jump.wav',
 

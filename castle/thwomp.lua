@@ -42,7 +42,7 @@ Thwomp = Enemy:extend
 			self.falling = true
 			self.loading = false
 			
-			self.velocity.y = 600
+			self.velocity.y = 400
 		end
 	end,
 	
@@ -67,10 +67,10 @@ Thwomp = Enemy:extend
 		self.loading = true
 		self.falling = false
 		
-		the.view.timer:start{ delay = 1, func = self.goUp, arg = { self } }
+		the.view.timer:start{ delay = 0.5, func = self.goUp, arg = { self } }
 	end,
 	
 	goUp = function(self)
-		self.velocity.y = -300
+		self.velocity.y = -500
 	end
 }

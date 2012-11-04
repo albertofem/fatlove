@@ -7,9 +7,9 @@ Fario = Player:extend
 	
 	powerUp = false,
 	
-	lifes = 10,
+	lifes = 20,
 	
-	inmune = false,
+	inmune = true,
 	
 	blink = Tween:new(),
 	
