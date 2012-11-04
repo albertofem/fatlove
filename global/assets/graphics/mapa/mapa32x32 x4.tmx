@@ -20,34 +20,101 @@
     <property name="noBig" value="true"/>
    </properties>
   </object>
-  <object name="Turtle" x="964" y="506" width="70" height="94">
-   <properties>
-    <property name="direction" value="-1"/>
-   </properties>
-  </object>
-  <object name="Turtle" x="2974" y="472" width="72" height="114"/>
   <object name="LavaBurst" x="3424" y="724" width="40" height="48">
    <properties>
-    <property name="noBig" value="True"/>
+    <property name="noBig" value="true"/>
    </properties>
   </object>
-  <object name="Turtle" x="4156" y="468" width="78" height="120"/>
-  <object name="Turtle" x="4594" y="458" width="94" height="132"/>
   <object name="LavaBurst" x="5170" y="716" width="42" height="44">
    <properties>
-    <property name="noBig" value="True"/>
+    <property name="noBig" value="true"/>
    </properties>
   </object>
   <object name="LavaBurst" x="5576" y="716" width="48" height="48">
    <properties>
-    <property name="noBig" value="True"/>
+    <property name="noBig" value="true"/>
    </properties>
   </object>
-  <object name="PowerUp" x="5314" y="400" width="64" height="58"/>
   <object name="Thwomp" x="6464" y="4" width="132" height="136"/>
   <object name="PowerUp" x="8546" y="514" width="56" height="54"/>
   <object name="Thwomp" x="8386" y="6" width="136" height="140"/>
   <object name="Thwomp" x="8540" y="14" width="142" height="130"/>
   <object name="Thwomp" x="8698" y="14" width="146" height="134"/>
+  <object name="Turtle" x="4160" y="516" width="64" height="90">
+   <properties>
+    <property name="direction" value="-1"/>
+   </properties>
+  </object>
+  <object name="Turtle" x="4452" y="516" width="64" height="88"/>
+  <object name="PowerUp" x="5318" y="390" width="48" height="50"/>
+  <object name="Turtle" x="2980" y="516" width="56" height="90"/>
+  <object name="Turtle" x="964" y="516" width="60" height="88"/>
+  <object name="PowerUp" x="9764" y="324" width="50" height="52"/>
+  <object name="Thwomp" x="11942" y="8" width="118" height="122"/>
+  <object name="Thowmp" x="11780" y="8" width="122" height="126"/>
+  <object name="Thwomp" x="11618" y="8" width="120" height="132"/>
+  <object name="PowerUp" x="11524" y="354" width="52" height="46"/>
+  <object name="LavaBurst" x="6974" y="708" width="38" height="36">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="7878" y="702" width="42" height="42">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="9446" y="700" width="40" height="46">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="10464" y="700" width="42" height="48">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="12190" y="698" width="40" height="46">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="13432" y="696" width="48" height="46"/>
+  <object name="Turtle" x="13952" y="516" width="64" height="92"/>
+  <object name="LavaBurst" x="14780" y="706" width="44" height="42"/>
+  <object name="PowerUp" x="15618" y="420" width="52" height="50"/>
+  <object name="LavaBurst" x="16340" y="672" width="48" height="54"/>
+  <object name="LavaBurst" x="16968" y="656" width="52" height="58"/>
+  <object name="PowerUp" x="18478" y="300" width="48" height="48"/>
+  <object name="Thwomp" x="19080" y="4" width="130" height="132"/>
+  <object name="Turtle" x="19874" y="484" width="62" height="94"/>
+  <object name="Turtle" x="20098" y="486" width="66" height="88"/>
+  <object name="LavaBurst" x="18470" y="696" width="38" height="38"/>
+  <object name="LavaBurst" x="20306" y="732" width="46" height="40"/>
+  <object name="LavaBurst" x="21708" y="730" width="50" height="46"/>
+  <object name="Thwomp" x="22500" y="4" width="128" height="130"/>
+  <object name="LavaBurst" x="22862" y="728" width="54" height="50"/>
+  <object name="PowerUp" x="23178" y="462" width="52" height="54"/>
+  <object name="Turtle" x="23620" y="450" width="60" height="98">
+   <properties>
+    <property name="direction" value="0"/>
+   </properties>
+  </object>
+  <object name="PowerUp" x="24108" y="486" width="54" height="54"/>
+  <object name="LavaBurst" x="24668" y="720" width="42" height="46"/>
+  <object name="PowerUp" x="26318" y="358" width="56" height="56"/>
+  <object name="LavaBurst" x="25858" y="716" width="36" height="38"/>
+  <object name="LavaBurst" x="27864" y="726" width="40" height="36"/>
+  <object name="LavaBurst" x="28710" y="740" width="44" height="34"/>
+  <object name="Thwomp" x="29472" y="2" width="130" height="138"/>
+  <object name="LavaBurst" x="29958" y="722" width="52" height="42"/>
+  <object name="PowerUp" x="30704" y="456" width="52" height="54"/>
+  <object name="Thwomp" x="32360" y="4" width="126" height="134"/>
+  <object name="Turtle" x="32868" y="326" width="66" height="88"/>
+  <object name="Turtle" x="33378" y="324" width="64" height="90"/>
+  <object name="PowerUp" x="34500" y="386" width="54" height="52"/>
+  <object name="Turtle" x="35588" y="388" width="66" height="90"/>
+  <object name="Thwomp" x="37600" y="2" width="134" height="136"/>
+  <object name="PowerUp" x="38402" y="388" width="52" height="50"/>
  </objectgroup>
 </map>
