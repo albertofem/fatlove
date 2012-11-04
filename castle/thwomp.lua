@@ -1,10 +1,20 @@
 Thwomp = Enemy:extend
 {
+	width = 120,
+	height = 140,
+
 	triggerX = 50,
 	triggerY = love.graphics.getHeight(),
 	
-	image = 'global/assets/graphics/enemigos/piedraene.png',
-	
+	sequencePool = {
+		standing = 
+		{
+			image = 'global/assets/graphics/enemigos/piedraene.png',
+			
+			standing = { frames = { 1 }, fps = 25 },
+		},
+	},
+
 	loading = false,
 	
 	falling = false,
@@ -18,6 +28,11 @@ Thwomp = Enemy:extend
 		end
 	},
 	
+	onCustomNew = function(self)
+		self:switchSequence('standing')
+		self:play('standing')
+	end,
+
 	fall = function(self)
 		if self.loading == false and self.falling == false then
 			self.falling = true
