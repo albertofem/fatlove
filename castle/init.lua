@@ -68,5 +68,7 @@ CastleLevel = Level:extend
     
     startLevel = function(self)
         self.start_level = true
+        
+        self.princess:onLevelStart()
     end
 }

@@ -5,6 +5,8 @@ Fario = Player:extend
 	width = 100,
 	height = 157,
 	
+	powerUp = false,
+	
 	sequencePool = {
 		walking = 
 		{
@@ -40,9 +42,23 @@ Fario = Player:extend
 	end,
 	
 	onCustomCollide = function(self, other)
-		if(other:instanceOf(BigBurst)) then
+		if(other:instanceOf(BigBurst) or other:instanceOf(HeartBullet)) then
 			self:die()
 		end
+	end,
+	
+	onPowerUp = function(self)
+		if not self.powerUp then
+			self.powerUp = true
+			self.movement.speed.x = self.movement.speed.x+5
+			
+			the.view.timer:start{ delay = 2, func = self.onPowerUpOff, arg = { self } }
+		end
+	end,
+	
+	onPowerUpOff = function(self)
+		self.powerUp = false
+		self.movement.speed.x = 5
 	end,
 	
 	onCustomNew = function(self)

@@ -25,7 +25,7 @@ Level = View:extend
 		
 		visible = false,
 		
-		acceleration = { x = 3000, y = 0, rotation = 0 },
+		acceleration = { x = 2100, y = 0, rotation = 0 },
 		
 		onNew = function(self)
 			self.x = love.graphics.getWidth() / 2
