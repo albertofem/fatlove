@@ -18,6 +18,12 @@
    </properties>
   </object>
   <object name="Thwomp" x="1698" y="2" width="130" height="126"/>
-  <object name="PowerUp" x="1890" y="518" width="66" height="64"/>
+  <object name="PowerUp" x="1890" y="518" width="64" height="64"/>
+  <object x="1944" y="578"/>
+  <object name="Turtle" x="929" y="513" width="64" height="92">
+   <properties>
+    <property name="direction" value="-1"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
