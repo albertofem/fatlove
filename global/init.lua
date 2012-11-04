@@ -75,6 +75,10 @@ TimeLimit = Text:extend
     
     restTimeLimit = function(self)
         self.text = self.text-1
+        
+        if(self.text < 0) then
+            the.app.view = End:new()
+        end
     end,
     
     startUpdate = function(self)

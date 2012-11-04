@@ -13,7 +13,7 @@ Princess = ActorAnimation:extend
 	bullet = HeartBullet:extend
 	{
 		image = 'global/assets/graphics/princesa/heart.png',
-		speed = { x = 20, y = 0 },
+		speed = { x = 17, y = 0 },
 		initialPosition = { x = 75, y = 120 },
 		collisionMap = {},
 	},
@@ -91,7 +91,7 @@ Princess = ActorAnimation:extend
 	end,
 	
 	createAttackTimer = function(self)
-		the.view.timer:start{ delay = 3, func = self.onAttack, arg = { self } }
+		the.view.timer:start{ delay = 4, func = self.onAttack, arg = { self } }
 	end,
 	
 	onLevelStart = function(self)

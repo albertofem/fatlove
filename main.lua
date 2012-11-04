@@ -13,7 +13,7 @@ require 'end'
 
 the.app = App:new
 {
-	view = CastleLevel:new(),
+	view = Menu:new(),
 	
 	name = "Princess Madness", -- Cambiar cuando sepamos nombre
 
