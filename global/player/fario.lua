@@ -59,6 +59,12 @@ Fario = Player:extend
 		else
 			self.movement.blockXMaxPos = false
 		end
+		
+		-- Die if off limits
+		if self.y - the.view.translate.y - self.height >= the.app.height then
+			playSound('global/assets/music/hit.ogg')
+			the.app.view = End:new()
+		end
 	end,
 	
 	onCustomCollide = function(self, other)

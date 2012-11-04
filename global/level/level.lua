@@ -51,10 +51,6 @@ Level = View:extend
 				x = background.width * x
 				local tile = Tile:new{ x = x, y = background.y, image = background.image }
 				layer:add(tile)
-				
-				if background.collidable then
-					self.floor = background
-				end
 			end
 			
 			self:add(layer)
