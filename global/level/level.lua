@@ -17,6 +17,8 @@ Level = View:extend
 	started = false,
 	
 	level_duration = 120,
+
+	--maxVisible = ,
 	
 	camera = Sprite:new
 	{
@@ -57,7 +59,6 @@ Level = View:extend
 		-- Add map if any
 		if self.mapFile then
 			self:loadLayers(self.mapFile)
-			self.width = self.map.width
 		end	
 		
 		-- Add players

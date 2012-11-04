@@ -8,7 +8,7 @@ require 'castle/lava_burst'
 
 CastleLevel = Level:extend
 {
-    width = 5000,
+    width = 12800,
     
     mapFile = 'global/assets/graphics/mapa/mapa32x32.lua',
     
@@ -24,17 +24,17 @@ CastleLevel = Level:extend
     backgrounds = {
         Background:new{
             image = 'global/assets/graphics/mapa/background02.png',
-            translateScale = 0.55
+            translateScale = 0.35
         },
         Background:new{
             width = 1200,
             image = 'global/assets/graphics/mapa/Fdfario.png',
-            translateScale = 0.35
+            translateScale = 0.65
         },
         Background:new{
             width = 800,
             image = 'global/assets/graphics/mapa/columna01.png',
-            translateScale = 0.1
+            translateScale = 0.90
         },
         Background:new
         {

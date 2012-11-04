@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="25" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="background02" tilewidth="32" tileheight="32">
+  <image source="background02.png" width="1280" height="800"/>
+ </tileset>
+ <tileset firstgid="1001" name="background04" tilewidth="32" tileheight="32">
+  <image source="background04.png" width="1280" height="800"/>
+ </tileset>
+ <tileset firstgid="2001" name="background03" tilewidth="32" tileheight="32">
+  <image source="background03.png" width="1280" height="800"/>
+ </tileset>
+ <tileset firstgid="3001" name="lavagreen" tilewidth="32" tileheight="32">
+  <image source="lavagreen.png" width="1280" height="800"/>
+ </tileset>
+ <tileset firstgid="4001" name="columna01" tilewidth="32" tileheight="32">
+  <image source="columna01.png" width="230" height="801"/>
+ </tileset>
+ <tileset firstgid="4176" name="plataformagris" tilewidth="32" tileheight="32">
+  <image source="plataformagris.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="4180" name="plataformanaranja" tilewidth="32" tileheight="32">
+  <image source="plataformanaranja.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="4184" name="plataformared" tilewidth="32" tileheight="32">
+  <image source="plataformared.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="4188" name="plataformared" tilewidth="32" tileheight="32">
+  <image source="plataformared.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="4192" name="plataformagris" tilewidth="32" tileheight="32">
+  <image source="plataformagris.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="4196" name="plataformagrisoscuro" tilewidth="32" tileheight="32">
+  <image source="plataformagrisoscuro.png" width="64" height="64"/>
+ </tileset>
+ <layer name="Background" width="50" height="25" visible="0">
+  <data encoding="base64" compression="zlib">
+   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
+  </data>
+ </layer>
+ <layer name="Columnas" width="50" height="25" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzVz+VSlQEUhtHPDtRzFBNRsbs7UQywr1HF7m7BRCTsxA5EsQNRFF1eAjOecfaeWb/38ybJv791qSRZzwaK2cgmNqcy8CyDt0XvVraxnR3sZFewHbv17mEv+9jPAQ4G23FI72GOcJRjHOdEsB0n9Z6ihFJOc4azwXac03ueC5RxkXIuBdtRobeSKqq5zBWuBttxTe91bnCTW9zmTrAdd/Xeo4b7POAhj4LteKz3CU95xnNeUBtsx0u9dbziNfW84W2wHe/0vucDH/nEZ74E2/FVbwPfaOQ7P2gKtuOn3l808/tvezpJWtE6/b/LWnZt9LalHe3pQEc6BdvRWW8WXehKN1Kkg+3orrcH2fSkF73pE2xHX739yKE/uQxgYLAdg/TmMZghDGUYw4PtGKF3JKMYzRjGMi7YjvF6JzCRSUxmClOD7ZimdzozmMksZjMn2I65eucxnwXks5BFwXYU6F3MEpayjEKKgu1YrncFK1nFatawNoM7/gDUEWQa
+  </data>
+ </layer>
+ <layer name="Lava" width="50" height="25" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzt0ofz13McB/CnkBFlVkaU7JQQoQiFKCtbychIVhkNoR9Fe+8dJbOMjKzsEQqZZbdoSEWIyOPu+2f4vO4ed+97vZ6v193n7pMUVVRRRRVVVFFFFVVUUUUV9X+sJyqm7HGmM43HeJRHeJiHeJCpPMAUJnM/9zGJiUxgPOMYyxhGM4qRjGA4wxjKEAYziIEMoD/96EsfepfEO3oxi0xkYyd240bcypeyX/A5n/EpnzCPj/mID5nLHD7gfd5jNu/yDm/zFm/yBq/zGq/yCrN4mZd4kRd4npk8x7M8w9PM4CmeLIl39GIWmcjGTuzGjbiVVErZRvl/+YcN/M1frOdP/uB31vEbv7KWNazmF1bxMytZwXKW8RM/spQlLGYRC/mB7/mOb/mGr/mKBcwviXf0YhaZyMZO7MaNuJX9fcd+7Ms+7E1N9qIG1dmTPajG7uzGruxCVapQmZ3ZiR3Zge3ZjkpUZFu2oQJbsxVbsgXl2ZzN2JRybFIS7+jFLDKRjZ3YjRtxK2fKnsHpnEZzmnEqp9CUkzmJE2lCY07geI6jEcdyDA1pwNEcxZHU5wgOpx6HcSiHUJeDqUNtDqIWB3JASbyjF7PIRDZ2YjduxK10lu1ER27lFm7mJjrQnhu5geu5jmtpxzW05Wqu4kquoA2XcxmXcgmtuZhWtOQiLuQCzuc8zuUczqYFZ5XEO3oxi0xkYyd240bcyiTZiUxgPOMYyxhGM4qRjGA4wxjKEAYziIEMoD/96EsfetOLntzLPfSgO3dzF2V0407u4Ha6chtdSuIdvZhFJrKx44dN3Ihb+Q8wGEzq
+  </data>
+ </layer>
+ <layer name="map" width="50" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzt1EEOgCAMBMA+YZ8nelX5/w+sBy5CAiRQrdm5NOEgZBcRIaJeC0QC8unNqmfekE8LXjN7sszs1nLnPGTbcuess/0y729N8sZbU8Ns/817rwl7Jarb9R85MH+O3Lvk1PWI+XPk3uyDfbCPvm9drwOB8Q==
+  </data>
+ </layer>
+</map>

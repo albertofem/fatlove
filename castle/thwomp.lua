@@ -3,7 +3,7 @@ Thwomp = Enemy:extend
 	triggerX = 50,
 	triggerY = love.graphics.getHeight(),
 	
-	image = 'castle/assets/graphics/thwomp.png',
+	image = 'global/assets/graphics/enemigos/piedraene.png',
 	
 	loading = false,
 	
