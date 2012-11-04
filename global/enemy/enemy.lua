@@ -35,7 +35,7 @@ Enemy = ActorAnimation:extend
 		for index, action in pairs(self.actions) do
 			if action.onCollide then action:onCollide(self, other, horizOverlap, vertOverlap) end
 		end
-		
+
 		if self.onCustomCollide then
 			self:onCustomCollide(other, horizOverlap, vertOverlap)
 		end
@@ -44,6 +44,13 @@ Enemy = ActorAnimation:extend
 	onUpdate = function(self)
 		for index, action in pairs(self.actions) do
 			if action.onUpdate then action:onUpdate(self) end
+		end
+		
+		-- Collide enemy with player
+		self:collide(the.player.fario)
+		
+		if(self.triggerBox) then
+			self.triggerBox:collide(the.player.fario)
 		end
 		
 		if self.onCustomUpdate then

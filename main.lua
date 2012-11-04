@@ -7,16 +7,13 @@ require 'global'
 
 -- Require levels and stuff
 require 'castle'
+require 'menu'
 
 the.app = App:new
 {
 	view = CastleLevel:new(),
 	
 	name = "Princess Madness", -- Cambiar cuando sepamos nombre
-	
-	onNew = function(self)
-		love.mouse.setVisible(false)
-	end,
 
 	onUpdate = function(self)
 		if the.keys:justPressed('escape') == true then
@@ -26,5 +23,12 @@ the.app = App:new
 				love.event.push('quit')
 			end
 		end
+		
+		if the.keys:justPressed('m') == true then
+			self.view = Menu:new()
+		end
 	end
 }
+
+the.scoreboard = ScoreBoard:new()
+-- the.timeLimit = TimeLimit:new()

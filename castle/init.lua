@@ -23,6 +23,16 @@ CastleLevel = Level:extend
         }
     },
     
+    life_full = Tile:extend
+    {
+        image = 'global/assets/graphics/interfazinicio/life_full.png'
+    },
+    
+    life_empty = Tile:extend
+    {
+        image = 'global/assets/graphics/interfazinicio/life_empty.png'
+    },
+    
     princess = Princess:new(),
     
     backgrounds = {
@@ -45,12 +55,14 @@ CastleLevel = Level:extend
         },
         Background:new
         {
-            image = 'global/assets/graphics/mapa/lavagreen.png',
+            image = 'global/assets/graphics/mapa/chocolate.png',
             translateScale = 1
         }
     },
 
     onCustomNew = function(self)
+		love.mouse.setVisible(false)
+        
         self.timer:start{ delay = 1, func = self.showPrincess, arg = { self } }
         self.timer:start{ delay = 6, func = self.startLevel, arg = { self } }
     end,
@@ -68,5 +80,8 @@ CastleLevel = Level:extend
     
     startLevel = function(self)
         self.start_level = true
+        the.timeLimit:startUpdate()
+        
+        self.princess:onLevelStart()
     end
 }

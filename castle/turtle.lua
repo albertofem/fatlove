@@ -1,21 +1,22 @@
 Turtle = Enemy:extend
 {
+	id = 'turtle',
+	
 	width = 67,
 	height = 101,
+	
+	direction = -1,
 
-	velocity = { y = 1000, x = math.random(1, 10) },
-
-	movement = SimpleMovementEnemy:new
-	{
-		direction = 1
-	},
+	movement = SimpleMovementEnemy:new(),
+	
+	acceleration = { y = 100, x = 0, rotation = 0 },
 
 	sequencePool = {
 		walking = 
 		{
 			image = 'global/assets/graphics/enemigos/tortugaanda.png',
 			
-			walking = { frames = { 1, 2, 3, 4 }, fps = 25 },
+			walking = { frames = { 1, 2, 3, 4 }, fps = 5 },
 		},
 		
 		dying =
@@ -27,9 +28,17 @@ Turtle = Enemy:extend
 	},
 	
 	onCustomNew = function(self)
+		-- Set random speed
+		self.velocity.x = math.random(5, 15)
+		self.movement.direction = self.direction
+		
+		if self.direction == -1 then
+			self.flipX = true 
+		end
+		
 		self:switchSequence('walking')
-		if self.direction == -1 then self.flipX = true end
 		self:play('walking')
+		
 		self:addAction(self.movement)
 	end,
 	

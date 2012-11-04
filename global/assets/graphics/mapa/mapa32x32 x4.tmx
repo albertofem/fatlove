@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="1600" height="25" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="plataformagrisoscuro" tilewidth="32" tileheight="32">
+  <image source="plataformagrisoscuro.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="5" name="plataformared" tilewidth="32" tileheight="32">
+  <image source="plataformared.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="9" name="puerta" tilewidth="32" tileheight="32">
+  <image source="puerta.png" width="64" height="416"/>
+ </tileset>
+ <layer name="map" width="1600" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzt3GmP5CYQANDd3Pd9X5vk///IOIpGE832YdrgqoL3JKu+9HQDLttgYF69AgAAAFjP+9vxwYUIAAAAAABQ1Yfb8dGFCAAAAAAAUJX9HwAAAAAAwGzs/wAAAAAAAGZj/wcAAAAAADAb+z8AYE4fb8cn0YUAAAAAaHRt30avCDOR18AsWp7fn27HZ6eWDgCAqoybAcjk2r6NXhFmIq+BVnvGfxFjxJbn9+fb8cWppQMAoCrjZgCAmuyTgnqir7M947+WMWLE/eTL7fhq0HcDAIxi/AUANRx9RnvGs6reuW+fFNTz6HWWdT7z3v1kRLm+3o5vDn4HMA/rP4AqjL8AoIajz2jPeFbVO/ft/4B1VJ3PHFGub7fju4PfAdT31G+x/gOowngLgGxeb8c7F+Isv0dN1/JE/uTXex5ixv0f5mrm4jwxwvfb8UN0IYBwGfotAC3ct8Yz/gBo8+52vHchzvJ71HQtT+RPfpXmIaKs0EYr7dMZfZ7OapuZz1FFP27HT9GFAGh05rPD8wjq0798TOVx4uxmy+HZ6pPBkfXcrWvFe6wpP9q3e/S3R9VVHBtpc1b7Ol/9eXd63wptNMM+nb1Gn6ez2mbmc1TRz9vxS3QhYHEjns8zPesvOfPZ8eh3jvrfqtYRQDv9S2YzWw73qo9n37Mj67lb14r3WFN+tG/36G+Pqqs4NtLmrPZ1vvqb7d3piLHrbG10ScQ7gai+1CPnKeM7Fe9tcvl1O36LLsQVcuHZjG2xpw73PjNDO/xrxPN5pmd9VaP+t6p1BJCHfixRqubW6GvEs+9Ztf0fR9n/IWaOo2Qpb3T7jqiftWpjGLs+JuKdwFnnImIO7Mz2894mh9+344/oQlwhF57N2BZ76nDvM1nbYfU+zR7aiEyyjUd6l6fl7/Z+1jX7H/1YolTNLdfIeart/zjK/g8xcxwlS3mj23dE/axVGyPbfFDv8Zb5sHY9rgnzlNzzZjv+jC4ETGb1Ps0e2ohMso1Hepen5e/2ftY1Ox/9+sf0GCeduae+9bd67Nfd+5mW8hiPvq3neu4sa8ozlFkUM+d+lvJGt++I+tn/MUa2+aDe462V58MirwnzlNzz13b8HV0IAIBgUePSLOPpo/36Vcf5PcZJZ+6pb/2tHvt1936mpTzGo2/ruZ47y5ryM8r89D40ej26OHccJUt5o9t3RP3s/1iD/R/9uCbI7Gn+I3r+PVu8JcNahL2i23H0epe9Zq1Xj2fkKjlAuyy5kT0Xs5Unm+zn7/+i+uCzjKdHlWu1Pgu8FJHbFa+v6PGOKIp1Ijyx/6Mfc0Axou+n1WL0/PvZ8V69b8mwFmGv6HYevd5lr1nr1eMZuUoO0C5LbmTPxWzlySb7+SO/1fos1HHWOD4ityteX9HjHVEU60SgP3NAMaLvp9Vi9PxLtnhLpbUI0e2YZX3FrPXqYZUcoF2W3Miei9nKk03287eqSuuqVuuzUMdZ4/iI3K54fUWPd0RRrBMBZhF9P60Wo+dfssVbjnz364O/3Sq6HbOsr5i1Xj2skgO0y5Ib2XMxW3myyX7+VlVpXdVqfRZ4KSK3K15f0eMdURTrRIBZRN9Pq8Xo+Zds8ZZKaxGi2zHL+opZ69XDKjlAuyy5kT0Xs5Unm+znj/xW67PASxG5XfH6ih7viKJYJwLMIvp+Wi1Gz7/0nMcfvR6g0lqE6PORZX3FrPXqYZUcoF2W3Miei9nKk03280d+q/VZ4KWI3K54fUWPd0RRrBMBZhF9P60W/wFodV7L
+  </data>
+ </layer>
+ <objectgroup name="enemies" width="1600" height="25">
+  <object name="Thwomp" x="1698" y="2" width="130" height="126"/>
+  <object x="964" y="546" width="4"/>
+  <object name="PowerUp" x="1922" y="514" width="50" height="52"/>
+  <object name="LavaBurst" x="2276" y="740" width="32" height="36">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="3424" y="724" width="40" height="48">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="5170" y="716" width="42" height="44">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="5576" y="716" width="48" height="48">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="Thwomp" x="6464" y="4" width="132" height="136"/>
+  <object name="PowerUp" x="8546" y="514" width="56" height="54"/>
+  <object name="Thwomp" x="8386" y="6" width="136" height="140"/>
+  <object name="Thwomp" x="8540" y="14" width="142" height="130"/>
+  <object name="Thwomp" x="8698" y="14" width="146" height="134"/>
+  <object name="PowerUp" x="5318" y="390" width="48" height="50"/>
+  <object name="PowerUp" x="9764" y="324" width="50" height="52"/>
+  <object name="Thwomp" x="11942" y="8" width="118" height="122"/>
+  <object name="Thowmp" x="11780" y="8" width="122" height="126"/>
+  <object name="Thwomp" x="11618" y="8" width="120" height="132"/>
+  <object name="PowerUp" x="11524" y="354" width="52" height="46"/>
+  <object name="LavaBurst" x="6974" y="708" width="38" height="36">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="7878" y="702" width="42" height="42">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="9446" y="700" width="40" height="46">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="10464" y="700" width="42" height="48">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="12190" y="698" width="40" height="46">
+   <properties>
+    <property name="noBig" value="true"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="13432" y="696" width="48" height="46"/>
+  <object name="LavaBurst" x="14780" y="706" width="44" height="42"/>
+  <object name="PowerUp" x="15618" y="420" width="52" height="50"/>
+  <object name="LavaBurst" x="16340" y="672" width="48" height="54"/>
+  <object name="LavaBurst" x="16968" y="656" width="52" height="58"/>
+  <object name="PowerUp" x="18478" y="300" width="48" height="48"/>
+  <object name="Thwomp" x="19080" y="4" width="130" height="132"/>
+  <object name="LavaBurst" x="18470" y="696" width="38" height="38"/>
+  <object name="LavaBurst" x="20306" y="732" width="46" height="40"/>
+  <object name="LavaBurst" x="21708" y="730" width="50" height="46"/>
+  <object name="Thwomp" x="22500" y="4" width="128" height="130"/>
+  <object name="LavaBurst" x="22862" y="728" width="54" height="50"/>
+  <object name="PowerUp" x="23178" y="462" width="52" height="54"/>
+  <object name="PowerUp" x="24108" y="486" width="54" height="54"/>
+  <object name="LavaBurst" x="24668" y="720" width="42" height="46"/>
+  <object name="PowerUp" x="26318" y="358" width="56" height="56"/>
+  <object name="LavaBurst" x="25858" y="716" width="36" height="38"/>
+  <object name="LavaBurst" x="27864" y="726" width="40" height="36"/>
+  <object name="LavaBurst" x="28710" y="740" width="44" height="34"/>
+  <object name="Thwomp" x="29472" y="2" width="130" height="138"/>
+  <object name="LavaBurst" x="29958" y="722" width="52" height="42"/>
+  <object name="PowerUp" x="30704" y="456" width="52" height="54"/>
+  <object name="Thwomp" x="32360" y="4" width="126" height="134"/>
+  <object name="PowerUp" x="34500" y="386" width="54" height="52"/>
+  <object name="Thwomp" x="37600" y="2" width="134" height="136"/>
+  <object name="PowerUp" x="38402" y="388" width="52" height="50"/>
+ </objectgroup>
+</map>
