@@ -1,5 +1,7 @@
 Thwomp = Enemy:extend
 {
+	id = "thwomp",
+	
 	triggerX = 50,
 	triggerY = love.graphics.getHeight(),
 	

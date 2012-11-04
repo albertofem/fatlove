@@ -22,56 +22,36 @@ CastleLevel = Level:extend
     },
     
     backgrounds = {
-        Background:new{
+        Background:new
+        {
             image = 'global/assets/graphics/mapa/background02.png',
             translateScale = 0.35
         },
-        Background:new{
+        Background:new
+        {
             width = 1200,
             image = 'global/assets/graphics/mapa/Fdfario.png',
             translateScale = 0.65
         },
-        Background:new{
+        Background:new
+        {
             width = 800,
             image = 'global/assets/graphics/mapa/columna01.png',
             translateScale = 0.90
         },
         Background:new
         {
-            image = 'global/assets/graphics/mapa/lava.png',
+            image = 'global/assets/graphics/mapa/lavagreen.png',
             translateScale = 1
         }
     },
-    
-    thwomp = Thwomp:new
-    {
-        id = "thwomp"
-    },
-
-    turtle = Turtle:new
-    {
-        id = "turtle"
-    },
-    
-    turtle2 = Turtle:new
-    {
-        x = 300,
-    },
 
     onCustomNew = function(self)
-        self:addEnemy(self.thwomp)
-       
-        self:addEnemy(self.turtle)
-        self:addEnemy(self.turtle2)
-
         self.timer:start{ delay = 1, func = self.startLevel, arg = { self } }
     end,
     
     onLevelComplete = function(self)
         self.active = false
-    end,
-    
-    onCustomUpdate = function(self)
     end,
     
     startLevel = function(self)

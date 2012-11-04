@@ -48,7 +48,8 @@ Level = View:extend
 			layer.translateScale.y = background.translateScale
 			
 			for x = 0, self.width / background.width do
-				x = (-1) * background.width * x
+				x = background.width * x
+				print(x)
 				local tile = Tile:new{ x = x, y = background.y, image = background.image }
 				layer:add(tile)
 			end
@@ -94,7 +95,10 @@ Level = View:extend
 		-- Update enemies
 		for index, enemy in pairs(self.enemies) do
 			self.map:subcollide(enemy)
-			enemy:onUpdate()
+			
+			if enemy.onUpdate then
+				enemy:onUpdate()
+			end
 		end
 		
 		-- Do the rest with enemies and entities and shit
