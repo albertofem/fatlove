@@ -108,6 +108,7 @@ Level = View:extend
 		end
 		
 		-- Collide enemies with map
+		self.map:subcollide(self.enemies)
 		self.map:subdisplace(self.enemies)
 		
 		-- Custom updates

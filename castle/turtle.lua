@@ -4,6 +4,8 @@ Turtle = Enemy:extend
 	
 	width = 67,
 	height = 101,
+	
+	direction = -1,
 
 	movement = SimpleMovementEnemy:new(),
 	
@@ -28,7 +30,11 @@ Turtle = Enemy:extend
 	onCustomNew = function(self)
 		-- Set random speed
 		self.velocity.x = math.random(5, 15)
-		if self.movement.direction == -1 then self.flipX = true end
+		self.movement.direction = self.direction
+		
+		if self.direction == -1 then
+			self.flipX = true 
+		end
 		
 		self:switchSequence('walking')
 		self:play('walking')
