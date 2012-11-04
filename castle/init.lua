@@ -36,26 +36,25 @@ CastleLevel = Level:extend
     princess = Princess:new(),
     
     backgrounds = {
-        Tile:new
+        Background:new
         {
             image = 'global/assets/graphics/mapa/background02.png',
             translateScale = 0.35
         },
-        Tile:new
+        Background:new
         {
             width = 1200,
             image = 'global/assets/graphics/mapa/Fdfario.png',
             translateScale = 0.65
         },
-        Tile:new
+        Background:new
         {
             width = 800,
             image = 'global/assets/graphics/mapa/columna01.png',
             translateScale = 0.90
         },
-        Floor:new
+        Background:new
         {
-            collidable = true,
             image = 'global/assets/graphics/mapa/chocolate.png',
             translateScale = 1
         }

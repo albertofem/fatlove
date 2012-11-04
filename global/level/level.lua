@@ -18,6 +18,8 @@ Level = View:extend
 	
 	level_duration = 140,
 	
+	floor = nil,
+	
 	camera = Sprite:new
 	{
 		width = 1,
@@ -50,7 +52,7 @@ Level = View:extend
 				local tile = Tile:new{ x = x, y = background.y, image = background.image }
 				layer:add(tile)
 				
-				if background:instanceOf(Floor) then
+				if background.collidable then
 					self.floor = background
 				end
 			end
@@ -124,11 +126,6 @@ Level = View:extend
 		-- Custom updates
 		if self.onCustomUpdate then
 			self:onCustomUpdate()
-		end
-		
-		-- Collide floor
-		if self.floor then
-			self.floor:collide(the.player.fario)
 		end
 	end,
 	
