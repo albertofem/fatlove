@@ -17,8 +17,6 @@ Level = View:extend
 	started = false,
 	
 	level_duration = 120,
-
-	--maxVisible = ,
 	
 	camera = Sprite:new
 	{
@@ -27,7 +25,7 @@ Level = View:extend
 		
 		visible = false,
 		
-		acceleration = { x = 100000, y = 0, rotation = 0 },
+		acceleration = { x = 3000, y = 0, rotation = 0 },
 		
 		onNew = function(self)
 			self.x = love.graphics.getWidth() / 2
@@ -48,7 +46,7 @@ Level = View:extend
 			layer.translateScale.y = background.translateScale
 			
 			for x = 0, self.width / background.width do
-				x = (-1) * background.width * x
+				x = background.width * x
 				local tile = Tile:new{ x = x, y = background.y, image = background.image }
 				layer:add(tile)
 			end
@@ -88,37 +86,14 @@ Level = View:extend
 		-- Update players
 		for index, player in pairs(self.players) do
 			self.map:subcollide(player)
+			self.map:subdisplace(player)
 			player:onUpdate()
-		end
-		
-		-- Update enemies
-		for index, enemy in pairs(self.enemies) do
-			self.map:subcollide(enemy)
-			enemy:onUpdate()
 		end
 		
 		-- Do the rest with enemies and entities and shit
 		if self.start_level and self.started == false then
 			self:panTo(self.camera, self.level_duration, self.onLevelComplete, 'linear')
 			self.started = true
-		end
-		
-		for index, player in pairs(self.players) do
-			-- Collide enemies and players
-			for idx, enemy in pairs(self.enemies) do
-				player:collide(enemy)
-				
-				if enemy.triggerBox then
-					player:collide(enemy.triggerBox)
-				end
-			end
-			
-			-- Each player with itself
-			for idx2, player_target in pairs(self.players) do
-				if not index == idx2 then
-					player_target:collide(player)
-				end
-			end
 		end
 		
 		-- Custom updates

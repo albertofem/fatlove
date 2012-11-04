@@ -26,12 +26,23 @@ Player = ActorAnimation:extend
 		if self.onCustomNew then
 			self:onCustomNew()
 		end
+		
+		-- Global variable
+		if not the.player then
+			the.player = {}
+		end
+		
+		the.player[self.id] = self
 	end,
 	
 	onCollide = function(self, other, horizOverlap, vertOverlap)
 		for index, action in pairs(self.actions) do
 			if action.onCollide then action:onCollide(self, other, horizOverlap, vertOverlap) end
 		end
+		
+		if self.onCustomCollide then
+			self:onCustomCollide(other, horizOverlap, vertOverlap)
+		end		
 	end,
 	
 	onUpdate = function(self)

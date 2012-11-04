@@ -58,4 +58,79 @@
    eJzt2lmOgzAMAFCOwPFm+Z3l/jeYVv1BLUyB2kkg70nIQoLgJIVg1GEAAAAAAADow9s4DO/jYwSA/3xc1orP8TGWYK0CYI+SaxUA5a35tqWWOA/fNIEoa75tqSXOo+Y3TYA9vO8ei3kCWuF991jME5BBLdEPc5zLvURv1BL9MMe53EvwGv8Julkah62xRo7Qu5r3Zc/8J+hmaRy2xho5Es9z6Fhq3pes18o6X/v6Lem175lz3/Jz6L6/z/az83APslYr63zt67ek1773Ovf3/X22n51Hr/MAADBHbQ206uvyTPoe82PktY84Lnv1WFuX/A1uud6enEv1fa/SY91CjrXH5izxuv1ctt8CcU5kW9FK9J95JX+DW663J+dSfd+r9Fi3kGPtsTlLvG7qj9jcauZ8FtFjtrb+eCWf6Poj6/jo87Pbm7ap/mgrqj+Wtfw+dnbRY7a2/ngln+j6I+v46POz25u2qf5oK6o/lqk/6lF/5B0ffX52e9M21R9tRfXHMvVHPeqPvOOjz89ub9qm+qOteN3+AFALcWk=
   </data>
  </layer>
+ <objectgroup name="enemies" width="400" height="25">
+  <object name="Turtle" x="448" y="483" width="96" height="123"/>
+  <object name="LavaBurst" x="10271" y="702" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="Thwomp" x="896" y="33" width="162" height="157"/>
+  <object name="LavaBurst" x="9342" y="706" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="897" y="703" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="1632" y="705" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="2050" y="704" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="3071" y="705" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="3615" y="704" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="4387" y="702" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="5056" y="703" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="6079" y="703" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="6594" y="703" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="7136" y="706" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="7936" y="701" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="LavaBurst" x="8992" y="702" width="32" height="31">
+   <properties>
+    <property name="name" value="LavaBurst"/>
+   </properties>
+  </object>
+  <object name="PowerUp" x="1254" y="418" width="48" height="52"/>
+ </objectgroup>
 </map>

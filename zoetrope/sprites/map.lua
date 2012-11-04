@@ -182,6 +182,10 @@ Map = Sprite:extend{
 								spr.x = self.x + (x - 1) * self.spriteWidth
 								spr.y = self.y + (y - 1) * self.spriteHeight
 								
+								if(othSpr.triggerBox) then
+									spr:collide(othSpr.triggerBox)
+								end
+								
 								hit = spr:collide(othSpr) or hit
 							end
 						end
