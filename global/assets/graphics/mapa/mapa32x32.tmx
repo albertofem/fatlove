@@ -131,5 +131,6 @@
     <property name="name" value="LavaBurst"/>
    </properties>
   </object>
+  <object name="PowerUp" x="1254" y="418" width="48" height="52"/>
  </objectgroup>
 </map>

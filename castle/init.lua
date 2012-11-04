@@ -5,6 +5,8 @@ require 'castle/background'
 require 'castle/turtle'
 require 'castle/floor'
 require 'castle/lava_burst'
+require 'global/level/powerup'
+require 'global/actor/princess'
 
 CastleLevel = Level:extend
 {
@@ -20,6 +22,8 @@ CastleLevel = Level:extend
             acceleration = { x = 0, y = 600, rotation = 0 }
         }
     },
+    
+    princess = Princess:new(),
     
     backgrounds = {
         Background:new
@@ -48,11 +52,14 @@ CastleLevel = Level:extend
 
     onCustomNew = function(self)
         self.timer:start{ delay = 1, func = self.showPrincess, arg = { self } }
-        self.timer:start{ delay = 5, func = self.startLevel, arg = { self } }
+        self.timer:start{ delay = 6, func = self.startLevel, arg = { self } }
     end,
     
     showPrincess = function(self)
+        self:add(self.princess)
+        self.princess:onShow()
         
+        self.timer:start{ delay = 3, func = self.princess.onStop, arg = { self.princess } }
     end,
     
     onLevelComplete = function(self)

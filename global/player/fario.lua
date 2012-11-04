@@ -1,5 +1,7 @@
 Fario = Player:extend
 {
+	id = "fario",
+	
 	width = 100,
 	height = 157,
 	
@@ -34,6 +36,12 @@ Fario = Player:extend
 			if not self.currentName == 'floor_right' and not self.currentName == 'floor_left' then
 				self:switchSequence('walking')
 			end
+		end
+	end,
+	
+	onCustomCollide = function(self, other)
+		if(other:instanceOf(BigBurst)) then
+			self:die()
 		end
 	end,
 	
