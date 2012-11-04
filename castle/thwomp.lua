@@ -42,7 +42,7 @@ Thwomp = Enemy:extend
 			self.falling = true
 			self.loading = false
 			
-			self.velocity.y = 800
+			self.velocity.y = 600
 		end
 	end,
 	

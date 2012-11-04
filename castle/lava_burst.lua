@@ -77,10 +77,12 @@ LavaBurst = Emitter:extend
 	onNew = function(self)
 		self:loadParticles(FireBurst, 200)
 		
-		local bigEmitter = BigEmitter:new()
-		bigEmitter.x = self.x
-		bigEmitter.y = self.y
-		
-		the.view:add(bigEmitter)
+		if not self.noBig then
+			local bigEmitter = BigEmitter:new()
+			bigEmitter.x = self.x
+			bigEmitter.y = self.y
+			
+			the.view:add(bigEmitter)
+		end
 	end
 }

@@ -7,7 +7,7 @@ Fario = Player:extend
 	
 	powerUp = false,
 	
-	life = 3,
+	lifes = 3,
 	
 	inmune = false,
 	
@@ -58,17 +58,21 @@ Fario = Player:extend
 	end,
 	
 	onCustomCollide = function(self, other)
+		if(other:instanceOf(BigBurst) or other:instanceOf(HeartBullet)) then
+			self:hit()
+		end
+	end,
+	
+	hit = function(self)
 		if self.inmune then
 			return
 		end
 		
-		if(other:instanceOf(BigBurst) or other:instanceOf(HeartBullet) or other:instanceOf(Turtle)) then
-			if self.life <= 0 then
-				self:onDie()
-			else
-				self.life = self.life - 1
-				self:onHit()
-			end
+		if self.life <= 0 then
+			self:onDie()
+		else
+			self.life = self.life - 1
+			self:onHit()
 		end
 	end,
 	

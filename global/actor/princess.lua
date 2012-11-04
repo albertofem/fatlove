@@ -13,7 +13,7 @@ Princess = ActorAnimation:extend
 	bullet = HeartBullet:extend
 	{
 		image = 'global/assets/graphics/princesa/heart.png',
-		speed = { x = 40, y = 0 },
+		speed = { x = 20, y = 0 },
 		initialPosition = { x = 75, y = 120 },
 		collisionMap = {},
 	},
@@ -26,9 +26,16 @@ Princess = ActorAnimation:extend
 			walking = { frames = { 1, 2, 3, 4 }, fps = 25 },
 		},
 		
+		flying =
+		{
+			image = 'global/assets/graphics/princesa/fly.png',
+			
+			flying = { frames = { 1, 2, 3, 4 }, fps = 25 },
+		},
+		
 		attacking =
 		{
-			image = 'global/assets/graphics/princesa/attack.png',
+			image = 'global/assets/graphics/princesa/flyattack.png',
 			
 			attack = { frames = { 1, 2, 3, 4, 5 }, fps = 5 },
 		},
@@ -38,6 +45,7 @@ Princess = ActorAnimation:extend
 	
 	onShow = function(self)
 		self.velocity.x = 50
+		
 	end,
 		
 	onNew = function(self)
@@ -68,8 +76,8 @@ Princess = ActorAnimation:extend
 	
 	onEndSequence = function(self, name)
 		if(name == 'attack') then
-			self:switchSequence('walking')
-			self:play('walking')
+			self:switchSequence('flying')
+			self:play('flying')
 		end
 	end,
 	
@@ -78,10 +86,11 @@ Princess = ActorAnimation:extend
 	end,
 	
 	onLevelStart = function(self)
-		self.velocity.x = 315
+		self.velocity.x = 240
 		self:createAttackTimer()
 		
-		self:play('walking')
+		self:switchSequence('flying')
+		self:play('flying')
 	end,
 	
 	onAttack = function(self)

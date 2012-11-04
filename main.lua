@@ -17,11 +17,7 @@ the.app = App:new
 
 	onUpdate = function(self)
 		if the.keys:justPressed('escape') == true then
-			if(self.view:instanceOf(Subview)) then
-				self.view:deactivate()
-			else
-				love.event.push('quit')
-			end
+			love.event.push('quit')
 		end
 		
 		if the.keys:justPressed('m') == true then
@@ -29,6 +25,3 @@ the.app = App:new
 		end
 	end
 }
-
-the.scoreboard = ScoreBoard:new()
--- the.timeLimit = TimeLimit:new()

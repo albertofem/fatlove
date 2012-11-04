@@ -16,7 +16,7 @@ Level = View:extend
 	
 	started = false,
 	
-	level_duration = 120,
+	level_duration = 140,
 	
 	camera = Sprite:new
 	{
@@ -25,7 +25,7 @@ Level = View:extend
 		
 		visible = false,
 		
-		acceleration = { x = 2100, y = 0, rotation = 0 },
+		acceleration = { x = 2000, y = 0, rotation = 0 },
 		
 		onNew = function(self)
 			self.x = love.graphics.getWidth() / 2
@@ -90,6 +90,12 @@ Level = View:extend
 		
 		-- Set time limit
 		the.timeLimit:setTimeLimit(self.level_duration)
+		
+		-- Set life board
+		self:add(the.lifeboard)
+		self:add(the.lifeboard.background)
+		self:add(the.lifeboard.life)
+		the.lifeboard:setLifes(the.player.fario.lifes)
 	end,
 
 	onUpdate = function(self)

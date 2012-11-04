@@ -26,36 +26,45 @@ Menu = View:extend
 		
 		onNew = function(self)
 			self.x = (love.graphics.getWidth() / 2) - self.width / 2
+			self.oldBack = self.background
+		end,
+		
+		onMouseEnter = function(self)
+			self.background = Tile:extend{ image = 'global/assets/graphics/interfazinicio/inicioyw.png' }
+		end,
+		
+		onMouseExit = function(self)
+			self.background = self.oldBack
 		end,
 		
 		onMouseUp = function(self)
 			the.app.view = CastleLevel:new()
-		end
-	},
-	
-	loadMainLevel = function(self)
-		the.app.view = CastleLevel:new()
-	end,
-	
-	options = Button:new
-	{
-		y = 400,
-		width = 246,
-		background = Tile:extend{ image = 'global/assets/graphics/interfazinicio/opciones.png'},
-		
-		onNew = function(self)
-			self.x = (love.graphics.getWidth() / 2) - self.width / 2
+			love.audio.stop(the.view.music)
 		end
 	},
 	
 	exit = Button:new
 	{
 		width = 130,
-		y = 500,
+		y = 400,
+		
 		background = Tile:extend{ image = 'global/assets/graphics/interfazinicio/salir.png' },
 		
 		onNew = function(self)
 			self.x = (love.graphics.getWidth() / 2) - self.width / 2
+			self.oldBack = self.background
+		end,
+		
+		onMouseEnter = function(self)
+			self.background = Tile:extend{ image = 'global/assets/graphics/interfazinicio/saliryw.png' }
+		end,
+		
+		onMouseExit = function(self)
+			self.background = self.oldBack
+		end,
+		
+		onMouseUp = function(self)
+			love.event.push('quit')
 		end
 	},
 	
@@ -63,7 +72,11 @@ Menu = View:extend
 		self:add(self.background)
 		self:add(self.logo)
 		self:add(self.start)
-		self:add(self.options)
 		self:add(self.exit)
+		
+		self.music = love.audio.newSource("global/assets/music/menu.wav")
+		self.music:setLooping(true)
+		
+		love.audio.play(self.music)
 	end
 }

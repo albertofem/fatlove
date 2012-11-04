@@ -10,7 +10,7 @@ require 'global/actor/princess'
 
 CastleLevel = Level:extend
 {
-    width = 12800,
+    width = 51200,
     
     mapFile = 'global/assets/graphics/mapa/mapa32x32.lua',
     
@@ -25,12 +25,12 @@ CastleLevel = Level:extend
     
     life_full = Tile:extend
     {
-        image = 'global/assets/graphics/interfazinicio/life_full.png'
+        image = 'global/assets/graphics/princesa/life_full.png'
     },
     
     life_empty = Tile:extend
     {
-        image = 'global/assets/graphics/interfazinicio/life_empty.png'
+        image = 'global/assets/graphics/princesa/life_empty.png'
     },
     
     princess = Princess:new(),
@@ -83,5 +83,12 @@ CastleLevel = Level:extend
         the.timeLimit:startUpdate()
         
         self.princess:onLevelStart()
+        
+        -- Music!
+        local music = love.audio.newSource("global/assets/music/level.wav")
+        
+        music:setLooping(true)
+        
+        love.audio.play(music)
     end
 }

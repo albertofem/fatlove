@@ -5,11 +5,13 @@ Turtle = Enemy:extend
 	width = 67,
 	height = 101,
 	
-	direction = -1,
+	direction = 1,
 
 	movement = SimpleMovementEnemy:new(),
 	
-	acceleration = { y = 100, x = 0, rotation = 0 },
+	acceleration = { y = 400, x = 0, rotation = 0 },
+	
+	died = false,
 
 	sequencePool = {
 		walking = 
@@ -43,7 +45,9 @@ Turtle = Enemy:extend
 	end,
 	
 	onCustomCollide = function(self, other, horizOverlap, vertOverlap)
-		self.y = self.y-vertOverlap
+		if self.died then
+			return
+		end
 		
 		if(other:instanceOf(Player)) then
 			if other.y+other.height <= self.y+50 then
@@ -51,8 +55,9 @@ Turtle = Enemy:extend
 				playSound('global/assets/sounds/hittop.wav')
 				other.velocity.y = -400
 				self:play('dying')
+				self.died = true
 			else
-				other:die()
+				other:hit()
 			end
 		end
 	end

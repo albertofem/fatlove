@@ -86,5 +86,52 @@ TimeLimit = Text:extend
     end
 }
 
+LifeBoard = Text:extend
+{
+    y = 35,
+    x = love.graphics.getWidth()-100,
+    
+    background = Tile:extend
+    {
+        y = 25,
+        x = love.graphics.getWidth()-200,
+        
+        image = 'global/assets/graphics/interfazinicio/timewithout.png',
+        
+        onUpdate = function(self)
+            self.x = (-1) * the.view.translate.x + love.graphics.getWidth()-200
+        end
+    },
+    
+    life = Tile:extend
+    {
+        y = 45,
+        x = love.graphics.getWidth()-180,
+        
+        image = 'global/assets/graphics/princesa/life_full.png',
+        
+        onUpdate = function(self)
+            self.x = (-1) * the.view.translate.x + love.graphics.getWidth()-180
+        end
+    },
+    
+    font = { 'global/assets/fonts/AintNothingFancy.ttf', 75 },
+    
+    text = 0,
+    
+    setLifes = function(self, lifes)
+        self.text = lifes
+    end,
+    
+    removeLife = function(self)
+        self.text = self.text-1
+    end,
+
+    onUpdate = function(self)
+        self.x = (-1) * the.view.translate.x + love.graphics.getWidth()-100
+    end
+} 
+
 the.scoreboard = ScoreBoard:new()
 the.timeLimit = TimeLimit:new()
+the.lifeboard = LifeBoard:new()
