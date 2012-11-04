@@ -95,7 +95,7 @@ Princess = ActorAnimation:extend
 	end,
 	
 	onLevelStart = function(self)
-		self.velocity.x = 260
+		self.velocity.x = 225
 		self:createAttackTimer()
 		
 		self.conv:die()

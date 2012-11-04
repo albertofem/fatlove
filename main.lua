@@ -22,8 +22,8 @@ the.app = App:new
 			love.event.push('quit')
 		end
 		
-		if the.keys:justPressed('m') == true then
-			self.view = Menu:new()
+		if the.keys:justPressed('enter') then
+			the.view = CastleLevel:new()
 		end
 	end
 }

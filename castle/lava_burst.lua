@@ -10,6 +10,10 @@ BigBurst = Tile:extend
 	
 	onUpdate = function(self)
 		self:collide(the.player['fario'])
+	end,
+	
+	onCollide = function(self)
+		self:die()
 	end
 }
 

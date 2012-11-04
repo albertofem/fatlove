@@ -13,8 +13,6 @@ Player = ActorAnimation:extend
 	jumping = JumpingActor:new{ length = 400 },
 	movement = MovingActor:new(),
 	gravity = GravityAwareActor:new(),
-	attack = AttackingActor:new(),
-	shooting = ShootingActor:new(),
 	
 	onNew = function(self)
 		self:addAction(self.jumping)
