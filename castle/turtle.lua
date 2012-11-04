@@ -1,6 +1,5 @@
 Turtle = Enemy:extend
 {
-	x = 100,
 	width = 67,
 	height = 101,
 

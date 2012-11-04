@@ -17,8 +17,6 @@ Level = View:extend
 	started = false,
 	
 	level_duration = 120,
-
-	--maxVisible = ,
 	
 	camera = Sprite:new
 	{
@@ -49,7 +47,6 @@ Level = View:extend
 			
 			for x = 0, self.width / background.width do
 				x = background.width * x
-				print(x)
 				local tile = Tile:new{ x = x, y = background.y, image = background.image }
 				layer:add(tile)
 			end

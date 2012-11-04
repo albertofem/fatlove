@@ -1,7 +1,7 @@
 Fario = Player:extend
 {
 	width = 100,
-	height = 174.5,
+	height = 157,
 	
 	sequencePool = {
 		walking = 

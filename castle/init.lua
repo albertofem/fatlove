@@ -47,7 +47,12 @@ CastleLevel = Level:extend
     },
 
     onCustomNew = function(self)
-        self.timer:start{ delay = 1, func = self.startLevel, arg = { self } }
+        self.timer:start{ delay = 1, func = self.showPrincess, arg = { self } }
+        self.timer:start{ delay = 5, func = self.startLevel, arg = { self } }
+    end,
+    
+    showPrincess = function(self)
+        
     end,
     
     onLevelComplete = function(self)

@@ -33,6 +33,8 @@ Thwomp = Enemy:extend
 	onCustomNew = function(self)
 		self:switchSequence('standing')
 		self:play('standing')
+		
+		the.view:add(self.triggerBox)
 	end,
 
 	fall = function(self)
