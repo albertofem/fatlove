@@ -124,7 +124,7 @@ Fario = Player:extend
 	
 	onPowerUpOff = function(self)
 		self.powerUp = false
-		self.movement.speed.x = 5
+		self.movement.speed.x = 6
 	end,
 	
 	onCustomNew = function(self)

@@ -18,6 +18,13 @@ Princess = ActorAnimation:extend
 		collisionMap = {},
 	},
 	
+	conv = Tile:extend
+	{
+		x = 100,
+		y = 280,
+		image = 'global/assets/graphics/princesa/comicNEW.png'
+	},
+	
 	sequencePool = {
 		walking = 
 		{
@@ -60,6 +67,8 @@ Princess = ActorAnimation:extend
 		self.velocity.x = 0
 		self:freeze()
 		
+		the.view:add(self.conv)
+		
 		self.sequencePool.walking.walking.fps = 2
 	end,
 	
@@ -88,6 +97,8 @@ Princess = ActorAnimation:extend
 	onLevelStart = function(self)
 		self.velocity.x = 255
 		self:createAttackTimer()
+		
+		self.conv:die()
 		
 		self:switchSequence('flying')
 		self:play('flying')
