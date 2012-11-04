@@ -11,7 +11,7 @@
  </tileset>
  <layer name="map" width="1600" height="25">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <objectgroup name="enemies" width="1600" height="25">
@@ -46,8 +46,7 @@
   <object name="PowerUp" x="5318" y="390" width="48" height="50"/>
   <object name="PowerUp" x="9764" y="324" width="50" height="52"/>
   <object name="Thwomp" x="11942" y="8" width="118" height="122"/>
-  <object name="Thowmp" x="11780" y="8" width="122" height="126"/>
-  <object name="Thwomp" x="11618" y="8" width="120" height="132"/>
+  <object name="Thwomp" x="11780" y="8" width="122" height="126"/>
   <object name="PowerUp" x="11524" y="354" width="52" height="46"/>
   <object name="LavaBurst" x="6974" y="708" width="38" height="36">
    <properties>
@@ -100,17 +99,6 @@
   <object name="PowerUp" x="34500" y="386" width="54" height="52"/>
   <object name="Thwomp" x="37600" y="2" width="134" height="136"/>
   <object name="PowerUp" x="38402" y="388" width="52" height="50"/>
-  <object name="Pwned" x="51040" y="480" width="32" height="32"/>
-  <object name="Finish" x="51168" y="64" width="32" height="32"/>
-  <object name="LavaBurst" x="39040" y="704" width="32" height="32"/>
-  <object name="LavaBurst" x="40832" y="704" width="32" height="32"/>
-  <object name="LavaBurst" x="43456" y="704" width="32" height="32"/>
-  <object name="LavaBurst" x="43488" y="704" width="32" height="32"/>
-  <object name="LavaBurst" x="43520" y="704" width="32" height="32"/>
-  <object name="LavaBurst" x="43552" y="704" width="32" height="32"/>
-  <object name="LavaBurst" x="43424" y="704" width="32" height="32"/>
-  <object name="LavaBurst" x="50368" y="512" width="32" height="32"/>
-  <object name="LavaBurst" x="50400" y="512" width="32" height="32"/>
-  <object name="LavaBurst" x="50432" y="512" width="32" height="32"/>
+  <object name="PowerUp" x="1578" y="522" width="54" height="46"/>
  </objectgroup>
 </map>
