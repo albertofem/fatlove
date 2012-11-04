@@ -49,17 +49,17 @@ ScoreBoard = Text:extend
 TimeLimit = Text:extend
 {
     y = 35,
-    x = 305,
+    x = 300,
     
     background = Tile:extend
     {
         y = 25,
-        x = 215,
+        x = 255,
         
         image = 'global/assets/graphics/interfazinicio/timewithout.png',
         
         onUpdate = function(self)
-            self.x = (-1) * the.view.translate.x + 215
+            self.x = (-1) * the.view.translate.x + 255
         end
     },
     
@@ -72,9 +72,17 @@ TimeLimit = Text:extend
     setTimeLimit = function(self, timeLimit)
         self.text = timeLimit
     end,
+    
+    restTimeLimit = function(self)
+        self.text = self.text-1
+    end,
+    
+    startUpdate = function(self)
+        the.view.timer:start{ delay = 1, func = self.restTimeLimit, arg = { self }, repeats = true }
+    end,
 
     onUpdate = function(self)
-        self.x = (-1) * the.view.translate.x + 305
+        self.x = (-1) * the.view.translate.x + 300
     end
 }
 

@@ -55,7 +55,7 @@ CastleLevel = Level:extend
         },
         Background:new
         {
-            image = 'global/assets/graphics/mapa/lavagreen.png',
+            image = 'global/assets/graphics/mapa/chocolate.png',
             translateScale = 1
         }
     },
@@ -80,6 +80,7 @@ CastleLevel = Level:extend
     
     startLevel = function(self)
         self.start_level = true
+        the.timeLimit:startUpdate()
         
         self.princess:onLevelStart()
     end

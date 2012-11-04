@@ -47,6 +47,14 @@ Fario = Player:extend
 				self:switchSequence('walking')
 			end
 		end
+		
+		-- Pan to level limit
+		if self.x + the.view.translate.x + self.width >= the.app.width then
+			print(self.x)
+			self.movement.blockXMaxPos = true
+		else
+			self.movement.blockXMaxPos = false
+		end
 	end,
 	
 	onCustomCollide = function(self, other)

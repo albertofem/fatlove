@@ -65,7 +65,7 @@
     <property name="name" value="LavaBurst"/>
    </properties>
   </object>
-  <object name="Thwomp" x="896" y="33" width="192" height="160"/>
+  <object name="Thwomp" x="896" y="33" width="128" height="128"/>
   <object name="LavaBurst" x="9342" y="706" width="32" height="31">
    <properties>
     <property name="name" value="LavaBurst"/>
@@ -131,7 +131,7 @@
     <property name="name" value="LavaBurst"/>
    </properties>
   </object>
-  <object name="PowerUp" x="2026" y="374" width="48" height="52"/>
+  <object name="PowerUp" x="2016" y="352" width="64" height="64"/>
   <object name="PowerUp" x="4209" y="133" width="48" height="52"/>
   <object name="PowerUp" x="6793" y="499" width="48" height="52"/>
   <object name="PowerUp" x="9596" y="246" width="48" height="52"/>

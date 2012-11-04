@@ -1,6 +1,6 @@
 PowerUp = Tile:extend
 {
-	image = 'global/assets/graphics/tire.png',
+	image = 'global/assets/graphics/powerup/wheels.png',
 	
 	onUpdate = function(self)
 		self:collide(the.player['fario'])
